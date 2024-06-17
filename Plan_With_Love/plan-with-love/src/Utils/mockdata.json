@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "price": 200,
+      "place": "New York",
+      "desc": "ipsum dolor sit amet consectetur adipisicing elit. Harum illo molestias blanditiis quisquam voluptate sed, quia cum sunt fuga illum a maxime in provident tenetur! Hic quas"
+    },
+    {
+      "id": 2,
+      "price": 300,
+      "place": "Los Angeles",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, dui nec ultrices hendrerit, diam dui varius nulla, sed dictum mauris lectus et enim."
+    },
+    {
+      "id": 3,
+      "price": 150,
+      "place": "Chicago",
+      "desc": "Nulla facilisi. Nullam in arcu vel quam consequat ullamcorper. Sed non neque eu leo pellentesque tincidunt."
+    },
+    {
+      "id": 4,
+      "price": 450,
+      "place": "San Francisco",
+      "desc": "Proin vel arcu eu odio rutrum eleifend. Donec euismod bibendum laoreet. Phasellus imperdiet magna aliquam bibendum euismod."
+    },
+    {
+      "id": 5,
+      "price": 220,
+      "place": "Seattle",
+      "desc": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas accumsan lacus vel facilisis volutpat."
+    },
+    {
+      "id": 6,
+      "price": 180,
+      "place": "Austin",
+      "desc": "Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
+    },
+    {
+      "id": 7,
+      "price": 380,
+      "place": "Denver",
+      "desc": "Curabitur aliquet quam id dui posuere blandit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
+    },
+    {
+      "id": 8,
+      "price": 270,
+      "place": "Miami",
+      "desc": "Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante blandit auctor. Donec sed odio dui."
+    },
+    {
+      "id": 9,
+      "price": 190,
+      "place": "Atlanta",
+      "desc": "Pellentesque auctor neque nec urna neque viverra vestibulum. Aenean lacinia bibendum nulla sed consectetur."
+    },
+    {
+      "id": 10,
+      "price": 420,
+      "place": "Washington D.C.",
+      "desc": "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante blandit auctor. Donec sed odio dui."
+    }
+  ]
+  
