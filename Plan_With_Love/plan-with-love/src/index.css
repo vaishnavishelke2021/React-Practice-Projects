@@ -19,6 +19,9 @@ code {
   font-style: normal;
 }
 
+::selection{
+  color: rgb(210, 22, 34)
+}
 
 
 @tailwind base;
