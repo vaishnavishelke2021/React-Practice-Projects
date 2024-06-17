@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
-function Card({ data }) {
+function Card({ data, removeCardHandler }) {
   const [readMore, setReadMore] = useState(false);
 
   const completeDesc = readMore ? data.desc : data.desc.substring(0, 110);
 
   const readmoreHandler = () => {
     setReadMore(!readMore);
+  };
+
+  const handleClick = () => {
+    removeCardHandler(data.id); 
   };
 
   return (
@@ -23,13 +27,16 @@ function Card({ data }) {
           {completeDesc}
           <span
             onClick={readmoreHandler}
-            className="text-blue-400 cursor-pointer"
+            className="text-blue-400 hover:text-blue-600 cursor-pointer"
           >
             {readMore ? " ...show less" : " ...read more"}
           </span>{" "}
         </p>
 
-        <button className="boder-none bg-rose-500 hover:bg-rose-900 text-white/90 mt-5 p-1 font-medium text-[15px] rounded-sm">
+        <button
+          onClick={handleClick}
+          className="boder-none bg-rose-500 hover:bg-rose-900 text-white/90 mt-5 p-1 font-medium text-[15px] rounded-sm"
+        >
           Not Interested
         </button>
       </div>
