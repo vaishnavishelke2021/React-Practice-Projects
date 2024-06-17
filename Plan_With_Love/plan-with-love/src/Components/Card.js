@@ -1,11 +1,11 @@
 import React from 'react'
 
-function App() {
+function Card() {
   return (
     <div>
-      dd
+      ss
     </div>
   )
 }
 
-export default App
+export default Card
