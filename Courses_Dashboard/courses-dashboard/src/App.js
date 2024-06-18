@@ -6,7 +6,7 @@ import { apiURL } from "./Utils/constants";
 import { toast } from "react-toastify";
 
 function App() {
-  const [courses, setCourses] = useState();
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -27,7 +27,7 @@ function App() {
     <div>
       <Navbar />
       <Filter />
-      <CardContainer courses={courses}/>
+      <CardContainer courses={courses} />
     </div>
   );
 }
