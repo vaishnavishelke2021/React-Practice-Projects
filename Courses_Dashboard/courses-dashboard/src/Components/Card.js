@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function Card({ c }) {
   const [like, setLike] = useState(false);
@@ -7,6 +8,31 @@ function Card({ c }) {
 
   const likeHandler = () => {
     setLike(!like);
+
+    if (!like) {
+      toast.success("Like added", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+    if (like) {
+      toast.error("Like removed", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
   };
 
   return (
