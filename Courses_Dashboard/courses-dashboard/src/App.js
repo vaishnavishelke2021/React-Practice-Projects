@@ -4,15 +4,18 @@ import Filter from "./Components/Filter";
 import CardContainer from "./Components/CardContainer";
 import { apiURL } from "./Utils/constants";
 import { toast } from "react-toastify";
+import ShimmerCardContainer from "./Components/ShimmerCardContainer";
 
 function App() {
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const data = await fetch(apiURL);
       const json = await data.json();
@@ -21,13 +24,14 @@ function App() {
     } catch {
       toast.error("Something went wrong");
     }
+    setLoading(false);
   };
 
   return (
     <div>
       <Navbar />
       <Filter />
-      <CardContainer courses={courses} />
+      {loading ? <ShimmerCardContainer /> : <CardContainer courses={courses} />}
     </div>
   );
 }
