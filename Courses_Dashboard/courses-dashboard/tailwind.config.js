@@ -6,6 +6,15 @@ module.exports = {
       colors: {
         lemon: "rgb(255, 253, 235)",
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
+      fontWeight: {
+        "roboto-regular": 400,
+        "roboto-medium": 500,
+        "roboto-bold": 700,
+        "roboto-black": 900,
+      },
     },
   },
   plugins: [],
