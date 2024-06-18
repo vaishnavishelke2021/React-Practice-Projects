@@ -12,24 +12,14 @@ function Card({ c }) {
     if (!like) {
       toast.success("Like added", {
         position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+        autoClose: 3000,
+        theme: "dark",
       });
     }
     if (like) {
       toast.error("Like removed", {
         position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        autoClose: 3000,
         theme: "dark",
       });
     }

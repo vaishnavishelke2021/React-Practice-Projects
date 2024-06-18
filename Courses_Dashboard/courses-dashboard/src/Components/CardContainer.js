@@ -1,16 +1,19 @@
 import React from "react";
 import Card from "./Card";
 
-function CardContainer({ courses }) {
-  let allCourses = [];
-
+function CardContainer({ courses, category }) {
   const getAllCourses = () => {
-    Object.values(courses).forEach((courseCategory) => {
-      courseCategory.forEach((course) => {
-        allCourses.push(course);
+    if (category === "All") {
+      let allCourses = [];
+      Object.values(courses).forEach((courseCategory) => {
+        courseCategory.forEach((course) => {
+          allCourses.push(course);
+        });
       });
-    });
-    return allCourses;
+      return allCourses;
+    } else {
+      return courses[category];
+    }
   };
 
   return (

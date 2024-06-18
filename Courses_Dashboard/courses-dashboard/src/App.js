@@ -5,10 +5,12 @@ import CardContainer from "./Components/CardContainer";
 import { apiURL } from "./Utils/constants";
 import { toast } from "react-toastify";
 import ShimmerCardContainer from "./Components/ShimmerCardContainer";
+import { btns } from "./Utils/constants";
 
 function App() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState(btns[0].title);
 
   useEffect(() => {
     fetchData();
@@ -30,8 +32,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Filter />
-      {loading ? <ShimmerCardContainer /> : <CardContainer courses={courses} />}
+      <Filter category={category} setCategory={setCategory}/>
+      {loading ? <ShimmerCardContainer /> : <CardContainer courses={courses} category={category}/>}
     </div>
   );
 }
