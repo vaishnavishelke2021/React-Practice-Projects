@@ -1,8 +1,9 @@
-import React from "react";
 import Card from "./Card";
 import { data } from "../data";
+import React, { useState } from "react";
 
 function Testimonial() {
+  const [index, setIndex] = useState(0);
   return (
     <div>
       <div className="max-w-[700px] mx-auto flex justify-center items-center flex-col mt-20">
@@ -11,11 +12,12 @@ function Testimonial() {
           <div className="w-[65%] mt-[2px] h-[3px] rounded-sm bg-orange mx-auto"></div>
         </div>
         <div>
-          {
-            data.map((card)=>(
-                <Card key={card.id} card={card} />
-            ))
-          }
+          <Card
+            review={data[index]}
+            data={data}
+            index={index}
+            setIndex={setIndex}
+          />
         </div>
       </div>
     </div>
