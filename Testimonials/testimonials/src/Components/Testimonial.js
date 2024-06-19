@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { data } from "../data";
 
 function Testimonial() {
   return (
@@ -10,7 +11,11 @@ function Testimonial() {
           <div className="w-[65%] mt-[2px] h-[3px] rounded-sm bg-orange mx-auto"></div>
         </div>
         <div>
-          <Card />
+          {
+            data.map((card)=>(
+                <Card key={card.id} card={card} />
+            ))
+          }
         </div>
       </div>
     </div>
