@@ -29,13 +29,13 @@ function Card({ c }) {
     <div>
       <div className=" relative max-w-[250px] h-[280px] bg-zinc-800 rounded-[4px]">
         <img
-          className=" w-full h-[150px] rounded-t-[4px]"
+          className=" w-full h-[140px] rounded-t-[4px]"
           src={c.image.url}
           alt=""
         />
         <button
           onClick={likeHandler}
-          className=" absolute top-[48%] right-2  border-none rounded-full p-[6px] bg-white shadow-lg text-sm"
+          className=" absolute top-[45%] right-2  border-none rounded-full p-[6px] bg-white shadow-lg text-sm"
         >
           <span>
             {like ? (
