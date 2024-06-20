@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import image from "/img1.jpg";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -28,16 +27,20 @@ function Form() {
     e.preventDefault();
     console.log("Your Information");
     console.log(formData);
+    alert("Form submitted successfully!");
   };
 
   return (
     <div>
       <div className="main-container">
+        <div className="c1"></div>
+        <div className="c2"></div>
         <form onSubmit={submitHandler}>
           {/* ---------------------------------------------------------------------------------  */}
           <div className="box">
             <div>
               <input
+                required
                 type="text"
                 placeholder="First Name"
                 onChange={changeHandler}
@@ -47,6 +50,7 @@ function Form() {
             </div>
             <div>
               <input
+                required
                 type="text"
                 placeholder="Last Name"
                 onChange={changeHandler}
@@ -60,6 +64,7 @@ function Form() {
           <div className="box">
             <div>
               <input
+                required
                 type="email"
                 name="email"
                 id="email"
@@ -70,6 +75,7 @@ function Form() {
             </div>
             <div>
               <input
+                required
                 type="number"
                 name="number"
                 id="number"
@@ -83,6 +89,7 @@ function Form() {
           {/* ---------------------------------------------------------------------------------  */}
           <div>
             <textarea
+            rows='4'
               name="address"
               id="address"
               placeholder="Address"
@@ -180,7 +187,9 @@ function Form() {
           </div>
 
           {/* ---------------------------------------------------------------------------------  */}
-          <button>Submit</button>
+
+         
+            <button>Submit</button>
         </form>
       </div>
     </div>

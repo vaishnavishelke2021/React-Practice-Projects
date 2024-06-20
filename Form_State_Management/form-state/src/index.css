@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #161616;
+  color: #f6f6f6;
 }
 
 code {
@@ -24,7 +25,6 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://img.freepik.com/free-vector/5g-networking-technology-background-vector-with-blue-digital-line_53876-126043.jpg?t=st=1718873553~exp=1718877153~hmac=d8234ecc3ada19bab0d1a34f19a286ec987f51256633c73f43fa309990dd3bdc&w=996");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -32,49 +32,60 @@ code {
 .main-container {
   width: 100%;
   margin: auto;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.49);
-  border-radius: 3px;
   display: flex;
+  position: relative;
 }
 
 form {
+  backdrop-filter: blur(75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   padding: 30px;
   gap: 10px;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.033);
+  /* background: #ffffff0a; */
+  border: 1px solid #f6f6f627;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.49);
+  border-radius: 10px;
 }
 
 input {
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.134);
+  color: rgba(255, 255, 255, 0.573);
   width: 200px;
-  padding: 8px 5px;
-  font-size: 0.9rem;
+  padding: 8px;
+  font-size: 0.85rem;
   border: none;
   outline: none;
   border-radius: 3px;
   margin: 4px;
 }
 
-.box{
+::placeholder {
+  color: rgba(255, 255, 255, 0.573);
+}
+
+.box {
   display: flex;
   flex-wrap: wrap;
 }
 
-textarea{
-  width: 97.5%;
+textarea {
+  width: 96%;
   margin-left: 4px;
 }
 
-h4{
+h4 {
   margin-bottom: 0.6rem;
   font-weight: 600;
   margin-top: 1rem;
 }
 
-.checkbox, .radio{
+.checkbox,
+.radio {
   width: fit-content;
   text-align: start;
   display: flex;
@@ -82,38 +93,75 @@ h4{
   align-items: center;
 }
 
-.checkbox input, .radio input{
+.checkbox input,
+.radio input {
   margin-left: -5.9rem;
 }
 
-.checkbox label, .radio label{
+.checkbox label,
+.radio label {
   margin-left: -5.4rem;
   margin-top: -3px;
-  color: #161616;
+  color: #f6f6f66d;
 }
 
-.country{
+.country {
   margin-top: 10px;
 }
 
-.country label{
-  font-size: 16px;
+.country label {
+  font-size: 15px;
   font-weight: 600;
 }
 
-select, textarea{
+select,
+textarea {
   padding: 5px;
-  background-color: white;
+  background-color: rgba(245, 245, 245, 0.134);
   color: gray;
-  border-radius: 4px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
 }
 
-button{
+button {
   margin-top: 1rem;
-  background-color: #1f7183;
-  color: white;
+  background-color: rgba(60, 142, 145, 0.258);
+  color: #f6f6f6;
   padding: 7px 0px;
   border: none;
   outline: none;
   border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #9da62169;
+  transition: all 0.3s;
+}
+
+.c1 {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: #00d0ff4f;
+  filter:blur(15px) ;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  z-index: -100;
+}
+
+.c2 {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #9da62169;
+  filter:blur(15px) ;
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  z-index: -100;
 }
