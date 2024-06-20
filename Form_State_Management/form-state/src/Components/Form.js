@@ -23,12 +23,17 @@ function Form() {
       };
     });
   };
-  console.log(formData);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("Your Information");
+    console.log(formData);
+  };
 
   return (
     <div>
       <div className="main-container">
-        <form action="">
+        <form onSubmit={submitHandler}>
           {/* ---------------------------------------------------------------------------------  */}
           <div className="box">
             <div>
@@ -175,6 +180,7 @@ function Form() {
           </div>
 
           {/* ---------------------------------------------------------------------------------  */}
+          <button>Submit</button>
         </form>
       </div>
     </div>
