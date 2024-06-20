@@ -1,3 +1,7 @@
+# Snapshot
+
+![Screenshot (191)](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/3c38becc-a624-441b-b0cc-3cfe83bc08d2)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
