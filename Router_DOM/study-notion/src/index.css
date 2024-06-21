@@ -62,3 +62,8 @@ code {
   width: fit-content;
   transition: all 0.2s;
 }
+
+input:focus{
+  background-color: rgb(13, 13, 32);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}

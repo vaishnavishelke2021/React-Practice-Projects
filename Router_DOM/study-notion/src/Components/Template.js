@@ -2,7 +2,7 @@ import React from "react";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 
-function Template({ title, desc, desc2, image, formType }) {
+function Template({ title, desc, desc2, image, formType, setIsLogin }) {
   return (
     <div className="w-full flex justify-between mt-12 mx-auto">
       <div className="w-[45%]">
@@ -12,10 +12,10 @@ function Template({ title, desc, desc2, image, formType }) {
           {" "}
           {desc2}
         </p>
-        {formType === "login" ? <LoginForm /> : <SignUpForm />}
+        {formType === "login" ? <LoginForm setIsLogin={setIsLogin}/> : <SignUpForm setIsLogin={setIsLogin}/>}
       </div>
 
-      <div className="w-[45%] relative  flex justify-end">
+      <div className="w-[45%] mt-8 relative  flex justify-end">
         <div className="bg-yellow-500 w-[25rem] h-[25rem] absolute rounded-sm"></div>
         <img
           className="w-[25rem] h-[25rem] object-cover absolute right-6 top-6 rounded-sm"

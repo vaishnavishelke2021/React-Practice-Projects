@@ -14,13 +14,13 @@ function App() {
 
   return (
     <div>
-      <div className="w-[80%] h-[95vh] text-white mx-auto tracking-[1px]">
-        <Navbar isLogin={isLogin} setIsLogin={setIsLogin}/>
+      <div className="w-[75%] h-[95vh] text-white mx-auto tracking-[1px]">
+        <Navbar isLogin={isLogin} setIsLogin={setIsLogin} />
 
         <Routes>
           <Route path="/" element={<MainOutlet />}>
             <Route index element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
