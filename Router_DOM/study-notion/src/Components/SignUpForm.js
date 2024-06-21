@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 
 function SignUpForm({ setIsLogin }) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAnotherVisible, setIsAnotherVisible] = useState(false);
+  const [accType, setAccType] = useState("student");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -28,9 +30,17 @@ function SignUpForm({ setIsLogin }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (formData.createPassword !== formData.confirmPassword) {
+      toast.error("Passwords do not match", {
+        position: "top-center",
+        autoClose: 1000,
+        theme: "dark",
+      });
+      return;
+    }
     navigate("/dashboard");
     setIsLogin(true);
-    toast.success("Account Created Successfully", {
+    toast.success("Account Created", {
       position: "top-center",
       autoClose: 1000,
       theme: "dark",
@@ -42,10 +52,24 @@ function SignUpForm({ setIsLogin }) {
       <form onSubmit={submitHandler} className="mt-6 flex flex-col gap-4 pb-10">
         {/* -------------------------------------student instructor div ------------------------------------------- */}
         <div className="bg-zinc-700/20 w-fit flex gap-1 py-2 px-2 rounded-full text-sm font-light">
-          <button className="bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full">
+          <button
+            onClick={() => setAccType("student")}
+            className={`${
+              accType === "student"
+                ? "bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full"
+                : "text-white/80 bg-transparent px-4 py-2 rounded-full"
+            }`}
+          >
             Student
           </button>
-          <button className="bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full">
+          <button
+            onClick={() => setAccType("instructor")}
+            className={`${
+              accType === "instructor"
+                ? "bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full"
+                : "text-white/80 bg-transparent px-4 py-2 rounded-full"
+            }`}
+          >
             Instructor
           </button>
         </div>
@@ -132,7 +156,7 @@ function SignUpForm({ setIsLogin }) {
 
             <input
               className=" bg-zinc-700/20 font-light text-[15px] px-3 py-2 mt-2 w-[110%] border-b-[1px] border-white/10 rounded-sm"
-              type={isVisible ? "text" : "password"}
+              type={isAnotherVisible ? "text" : "password"}
               name="confirmPassword"
               id="confirmPassword"
               placeholder="Confirm password"
@@ -140,10 +164,10 @@ function SignUpForm({ setIsLogin }) {
               onChange={changeHandler}
             />
             <span
-              onClick={() => setIsVisible((prev) => !prev)}
+              onClick={() => setIsAnotherVisible((prev) => !prev)}
               className="cursor-pointer text-white/60 absolute bottom-[10px] right-[-8px] text-[20px]"
             >
-              {isVisible ? <IoIosEye /> : <IoIosEyeOff />}
+              {isAnotherVisible ? <IoIosEye /> : <IoIosEyeOff />}
             </span>
           </label>
         </div>
