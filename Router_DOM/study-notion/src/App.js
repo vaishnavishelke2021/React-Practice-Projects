@@ -8,6 +8,7 @@ import Dashboard from "./Components/Dashboard";
 import MainOutlet from "./Components/MainOutlet";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
+import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -21,8 +22,18 @@ function App() {
           <Route path="/" element={<MainOutlet />}>
             <Route index element={<Home />} />
             <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
-            <Route path="/signUp" element={<SignUp setIsLogin={setIsLogin}/>} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/signUp"
+              element={<SignUp setIsLogin={setIsLogin} />}
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute isLogin={isLogin}>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Route>

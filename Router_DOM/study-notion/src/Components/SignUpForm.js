@@ -49,31 +49,30 @@ function SignUpForm({ setIsLogin }) {
 
   return (
     <div>
+      {/* -------------------------------------student instructor div ------------------------------------------- */}
+      <div className="bg-zinc-700/20 w-fit flex gap-1 py-2 px-2 mt-4 rounded-full text-sm font-light">
+        <button
+          onClick={() => setAccType("student")}
+          className={`${
+            accType === "student"
+              ? "bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full"
+              : "text-white/80 bg-transparent px-4 py-2 rounded-full"
+          }`}
+        >
+          Student
+        </button>
+        <button
+          onClick={() => setAccType("instructor")}
+          className={`${
+            accType === "instructor"
+              ? "bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full"
+              : "text-white/80 bg-transparent px-4 py-2 rounded-full"
+          }`}
+        >
+          Instructor
+        </button>
+      </div>
       <form onSubmit={submitHandler} className="mt-6 flex flex-col gap-4 pb-10">
-        {/* -------------------------------------student instructor div ------------------------------------------- */}
-        <div className="bg-zinc-700/20 w-fit flex gap-1 py-2 px-2 rounded-full text-sm font-light">
-          <button
-            onClick={() => setAccType("student")}
-            className={`${
-              accType === "student"
-                ? "bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full"
-                : "text-white/80 bg-transparent px-4 py-2 rounded-full"
-            }`}
-          >
-            Student
-          </button>
-          <button
-            onClick={() => setAccType("instructor")}
-            className={`${
-              accType === "instructor"
-                ? "bg-[#0d0d20] text-white/60 px-4 py-2 rounded-full"
-                : "text-white/80 bg-transparent px-4 py-2 rounded-full"
-            }`}
-          >
-            Instructor
-          </button>
-        </div>
-
         {/* ---------------------------------------name div ----------------------------------------------------- */}
         <div className="w-[85%] flex justify-start space-x-10">
           <label>
