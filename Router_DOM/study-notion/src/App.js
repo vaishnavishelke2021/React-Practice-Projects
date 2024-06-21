@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
@@ -10,14 +10,16 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <div>
       <div className="w-[80%] h-[95vh] text-white mx-auto tracking-[1px]">
-        <Navbar />
+        <Navbar isLogin={isLogin} setIsLogin={setIsLogin}/>
 
         <Routes>
           <Route path="/" element={<MainOutlet />}>
-            <Route index element={<Home/>} />
+            <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/dashboard" element={<Dashboard />} />
