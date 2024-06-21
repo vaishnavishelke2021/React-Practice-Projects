@@ -4,7 +4,9 @@ https://study-notion-vs.netlify.app/
 # Snapshots
 
 ![Screenshot (192)](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/f85d4f98-9a91-4dc6-bd78-ce67380afd67)
+
 ![Screenshot (193)](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/95b2f4db-5fb7-442f-9e0b-3fe63012447e)
+
 ![Screenshot (194)](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/2763d905-fde3-4697-8450-c3ad91f1718c)
 
 
