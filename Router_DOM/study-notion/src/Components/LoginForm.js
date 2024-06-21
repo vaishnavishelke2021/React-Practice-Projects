@@ -67,11 +67,11 @@ function LoginForm({ setIsLogin }) {
           />
           <span
             onClick={() => setIsVisible((prev) => !prev)}
-            className="cursor-pointer text-white/60 absolute bottom-[10px] right-[90px] text-[20px]"
+            className="cursor-pointer text-white/60 absolute bottom-[10px] right-3 text-[20px]"
           >
             {isVisible ? <IoIosEye /> : <IoIosEyeOff />}
           </span>
-          <span className="absolute bottom-[-22px] right-[76px] text-[11px] text-[#49b0ff] font-light">
+          <span className="absolute bottom-[-22px] right-0 text-[11px] text-[#49b0ff] font-light">
             Forgot passwod ?
           </span>
         </label>
@@ -82,7 +82,7 @@ function LoginForm({ setIsLogin }) {
 
         <div className="mt-3 relative">
           <div className="w-full h-[0.8px] bg-white/20 rounded-sm "></div>
-          <span className="bg-[#0d0d20] font-thin text-white/30 px-2 text-[16px] absolute bottom-[-9px] left-[35%]">
+          <span className="bg-[#0d0d20] font-thin text-white/30 px-2 text-[16px] absolute bottom-[-9px] left-[47%]">
             or
           </span>
         </div>

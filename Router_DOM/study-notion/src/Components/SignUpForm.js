@@ -153,7 +153,7 @@ function SignUpForm({ setIsLogin }) {
             />
             <span
               onClick={() => setIsVisible((prev) => !prev)}
-              className="cursor-pointer text-white/60 absolute bottom-[10px] right-[-8px] text-[20px]"
+              className="cursor-pointer text-white/60 absolute bottom-[10px] right-[-27px] text-[20px]"
             >
               {isVisible ? <IoIosEye /> : <IoIosEyeOff />}
             </span>
@@ -175,7 +175,7 @@ function SignUpForm({ setIsLogin }) {
             />
             <span
               onClick={() => setIsAnotherVisible((prev) => !prev)}
-              className="cursor-pointer text-white/60 absolute bottom-[10px] right-[-8px] text-[20px]"
+              className="cursor-pointer text-white/60 absolute bottom-[10px] right-[-27px] text-[20px]"
             >
               {isAnotherVisible ? <IoIosEye /> : <IoIosEyeOff />}
             </span>
