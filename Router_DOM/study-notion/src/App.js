@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <div className="w-[75%] h-[95vh] text-white mx-auto tracking-[1px]">
+      <div className="w-[72%] h-[95vh] text-white mx-auto tracking-[1px]">
         <Navbar isLogin={isLogin} setIsLogin={setIsLogin} />
 
         <Routes>
