@@ -4,7 +4,7 @@ import SignUpForm from "./SignUpForm";
 
 function Template({ title, desc, desc2, image, formType, setIsLogin }) {
   return (
-    <div className="w-full flex justify-between mt-12 mx-auto">
+    <div className="w-full flex flex-wrap justify-between mt-12 mx-auto">
       <div className="w-[45%]">
         <h1 className="text-3xl font-bold">{title}</h1>
         <p className="text-lg font-light mt-4 text-white/80 ">{desc}</p>
