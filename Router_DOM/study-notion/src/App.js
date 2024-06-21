@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<MainOutlet />}>
             <Route index element={<Home />} />
             <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
-            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/signUp" element={<SignUp setIsLogin={setIsLogin}/>} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

@@ -12,7 +12,11 @@ function Template({ title, desc, desc2, image, formType, setIsLogin }) {
           {" "}
           {desc2}
         </p>
-        {formType === "login" ? <LoginForm setIsLogin={setIsLogin}/> : <SignUpForm setIsLogin={setIsLogin}/>}
+        {formType === "login" ? (
+          <LoginForm setIsLogin={setIsLogin} />
+        ) : (
+          <SignUpForm setIsLogin={setIsLogin} />
+        )}
       </div>
 
       <div className="w-[45%] mt-8 relative  flex justify-end">

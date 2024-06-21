@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../Images/logo.svg";
 import { Link, NavLink } from "react-router-dom";
-// import PrimaryBtn from "./PrimaryBtn";
 import { RiMenu3Fill } from "react-icons/ri";
 import { toast } from "react-toastify";
 
