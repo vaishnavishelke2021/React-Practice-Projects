@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: url("https://img.freepik.com/free-photo/bathroom-floor-tiles-textured-backdrop_53876-103867.jpg?t=st=1719042670~exp=1719046270~hmac=a8cb4ae9b39d9c19c69aac7e7f33f86d4fbffb71bc897a5084888d5031a22aa6&w=996"); */
+  background-color: #161616;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
