@@ -28,9 +28,9 @@ function RandomGif() {
   };
 
   return (
-    <div className="w-[35%] bg-[#c0bebe23] shadow-md p-4 flex flex-col  items-center rounded-md">
+    <div className="w-full md:w-[35%] bg-[#c0bebe14] shadow-md p-4 flex flex-col  items-center rounded-md">
       <h1 className="text-[#f6f6f6] text-2xl font-semibold ">Random GIF</h1>
-      <div className="w-full h-[17rem] bg-white/10 rounded-sm mt-3 flex justify-center items-center">
+      <div className="w-full h-[17rem] bg-[#a5ffc20f] rounded-sm mt-3 flex justify-center items-center">
         {!loading ? (
           <img className="h-full " src={gifUrl} alt="Random GIF" />
         ) : (
