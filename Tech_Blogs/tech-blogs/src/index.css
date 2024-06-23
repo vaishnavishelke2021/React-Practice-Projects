@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-::selection{
+::selection {
   background-color: skyblue;
   color: black;
 }
@@ -23,7 +23,6 @@ code {
 @tailwind components;
 @tailwind utilities;
 
-
 .catamaran {
   font-family: "Catamaran", sans-serif;
   font-optical-sizing: auto;
@@ -31,3 +30,21 @@ code {
   font-style: normal;
 }
 
+/* --------------------------- SPINNER -----------------------------------  */
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #20aacc 94%, #0000) top/9px 9px
+      no-repeat,
+    conic-gradient(#0000 30%, #20aacc);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+  100% {
+    transform: rotate(1turn);
+  }
+}

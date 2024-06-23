@@ -7,9 +7,11 @@ function Blogs() {
   return (
     <div className="w-[90%] mx-auto py-3">
       {loading ? (
-        <h1>loading</h1>
+        <div className="flex justify-center items-center w-full h-[73vh]">
+            <div className="spinner"></div>
+        </div>
       ) : posts.length === 0 ? (
-        <h1>No Post Found</h1>
+        <h1>No Blog Found</h1>
       ) : (
         posts.map((post) => <Card key={post.id} post={post} />)
       )}
