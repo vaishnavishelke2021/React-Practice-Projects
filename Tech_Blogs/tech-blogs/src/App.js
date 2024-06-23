@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <div className={`font-Catamaran h-full ${isDark ? ' bg-dark text-light' : ' bg-light text-dark'}`}>
-      <div className="w-[70%] h-full mx-auto">
+      <div className="h-full mx-auto">
         <Header />
         <Blogs />
         <Pagination />
