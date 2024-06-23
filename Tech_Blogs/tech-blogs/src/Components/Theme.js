@@ -8,8 +8,10 @@ function Theme() {
 
   return (
     <div className="">
-      <button className="bg-primary hover:scale-110 rounded-full text-[1rem] p-[5px] transition-all cursor-pointer" 
-      onClick={(prev) => setIsDark(!isDark)}>
+      <button
+        className="bg-primary hover:scale-110 rounded-full text-[1rem] p-[5px] transition-all cursor-pointer"
+        onClick={(prev) => setIsDark(!isDark)}
+      >
         {isDark ? (
           <MdDarkMode className="text-light" />
         ) : (
