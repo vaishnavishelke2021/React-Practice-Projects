@@ -8,6 +8,7 @@ export function AppContextProvider({ children }) {
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
+  const [isDark, setIsDark] = useState(true);
 
   const fetchData = async (page = 1) => {
     setLoading(true);
@@ -45,6 +46,8 @@ export function AppContextProvider({ children }) {
     setTotalPages,
     handlePageChange,
     fetchData,
+    isDark,
+    setIsDark,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

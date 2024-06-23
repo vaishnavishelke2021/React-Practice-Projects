@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import Header from "./Components/Header";
 import Blogs from "./Components/Blogs";
 import Pagination from "./Components/Pagination";
+import { AppContext } from "./AppContext";
 
 export default function App() {
+  const { fetchData } = useContext(AppContext);
+
+  const { isDark } = useContext(AppContext);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="font-Catamaran  bg-dark text-light">
-      <div className="w-[70%] h-[100vh] mx-auto">
+    <div className={`font-Catamaran ${isDark ? ' bg-dark text-light' : ' bg-light text-dark'}`}>
+      <div className="w-[70%] h-full mx-auto">
         <Header />
-        <Blogs/>
-        <Pagination/>
+        <Blogs />
+        <Pagination />
       </div>
     </div>
   );
