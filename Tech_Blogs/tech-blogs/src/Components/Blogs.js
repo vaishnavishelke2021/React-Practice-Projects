@@ -5,7 +5,7 @@ import Card from "./Card";
 function Blogs() {
   const { loading, posts } = useContext(AppContext);
   return (
-    <div className="w-full md:w-[63%] mt-12 mx-auto py-3 pb-12">
+    <div className="w-full min-h-[84vh] bg-cover md:w-[63%] mt-12 mx-auto py-3 pb-12">
       {loading ? (
         <div className="flex justify-center items-center w-full h-screen">
             <div className="spinner"></div>
