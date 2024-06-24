@@ -10,9 +10,15 @@ export function AppContextProvider({ children }) {
   const [totalPages, setTotalPages] = useState(null);
   const [isDark, setIsDark] = useState(true);
 
-  const fetchData = async (page = 1) => {
+  const fetchData = async (page = 1, tag = null, category) => {
     setLoading(true);
-    const url = `${API_URL}?page=${page}`;
+    let url = `${API_URL}?page=${page}`;
+    if (tag) {
+      url += `&tag=${tag}`;
+    }
+    if (category) {
+      url += `&category=${category}`;
+    }
 
     try {
       const response = await fetch(url);
