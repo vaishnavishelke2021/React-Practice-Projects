@@ -28,8 +28,8 @@ function CategoryPage() {
             Back
           </button>
 
-          <h1 className="text-xl font-bold mt-[17px]">
-            Blogs on <span className="text-blue-500">#{category}</span>
+          <h1 className="md:text-xl text-[16px] font-bold mt-[17px]">
+            Blogs on &nbsp; <span className="underline">{category}</span>
           </h1>
         </div>
       </div>

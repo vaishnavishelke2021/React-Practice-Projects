@@ -17,11 +17,20 @@ function TagPage() {
       }`}
     >
       <Header />
-      <div className="h-[]">
-        {<button onClick={() => navigation(-1)}>Back</button>}
-        <h1>
-          Blogs Tagged <span>#{tag}</span>
-        </h1>
+      <div className="pt-20 -mb-14 w-full md:max-w-[63%] mx-auto">
+        <div className="max-w-[80%] mx-auto flex items-center gap-x-5">
+          <button
+            className="bg-primary text-light
+            p-1 px-4 rounded-sm mt-1 -mb-3"
+            onClick={() => navigation(-1)}
+          >
+            Back
+          </button>
+
+          <h1 className="md:text-xl text-[16px] font-bold mt-[17px]">
+            Blogs Tagged &nbsp; <span className="text-blue-500">#{tag}</span>
+          </h1>
+        </div>
       </div>
       <Blogs />
       <Pagination />

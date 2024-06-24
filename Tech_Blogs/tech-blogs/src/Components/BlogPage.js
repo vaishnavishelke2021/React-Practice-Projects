@@ -64,7 +64,7 @@ function BlogPage() {
 
               <Card post={blog} />
 
-              <div className="max-w-[80%] mx-auto text-3xl font-bold mt-14 -mb-3">
+              <div className="max-w-[80%] mx-auto text-2xl md:text-3xl font-bold mt-14 -mb-3">
                 <h1>Related Blogs</h1>
               </div>
               {relatedBlogs.map(
