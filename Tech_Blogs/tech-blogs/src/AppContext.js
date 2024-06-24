@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { API_URL } from "./constants";
+import { useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
@@ -9,6 +10,7 @@ export function AppContextProvider({ children }) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
   const [isDark, setIsDark] = useState(true);
+  const navigate = useNavigate();
 
   const fetchData = async (page = 1, tag = null, category) => {
     setLoading(true);
@@ -36,9 +38,10 @@ export function AppContextProvider({ children }) {
     setLoading(false);
   };
 
+  // handling next and prev button
   const handlePageChange = (page) => {
+    navigate({ search: `?page=${page}` });
     setPage(page);
-    fetchData(page);
   };
 
   const value = {
