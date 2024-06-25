@@ -5,8 +5,8 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="w-full py-4 bg-rose/10">
-      <div className="max-w-[90%] md:max-w-[70%] mx-auto flex justify-between items-center">
+    <div className="w-full py-4 bg-[#f0e3e7] fixed top-0 z-10">
+      <div className="max-w-[90%] md:max-w-[75%] mx-auto flex justify-between items-center">
         {/* ------------------------------------------ logo ------------------------------------------------ */}
         <NavLink to="/">
           <div className="flex gap-x-3 items-center">
