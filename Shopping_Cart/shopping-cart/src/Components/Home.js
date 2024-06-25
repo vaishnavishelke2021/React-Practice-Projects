@@ -35,7 +35,9 @@ function Home() {
           ))}
         </div>
       ) : (
-        <h1>No data found</h1>
+        <div className="flex justify-center items-center min-h-[70vh]">
+          <h1>No data found</h1>
+        </div>
       )}
     </div>
   );
