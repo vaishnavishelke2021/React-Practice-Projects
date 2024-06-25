@@ -2,12 +2,24 @@ import React from "react";
 import { MdDelete } from "react-icons/md";
 import { removeItem } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
 
   const removeFromItem = () => {
     dispatch(removeItem(item.id));
+    toast.error("Item removed", {
+      style: {
+        border: "1px solid #B83B5E",
+        padding: "10px",
+        color: "#B83B5E",
+      },
+      iconTheme: {
+        primary: "#B83B5E",
+        secondary: "#FFFAEE",
+      },
+    });
   };
 
   const desc = item.description.substring(0, 160);

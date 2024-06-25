@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../redux/cartSlice";
+import toast from "react-hot-toast";
 
 function Item({ item }) {
   const title = item.title.substring(0, 18);
@@ -10,10 +11,32 @@ function Item({ item }) {
 
   const removeFromItem = () => {
     dispatch(removeItem(item.id));
+    toast.error("Item removed", {
+      style: {
+        border: "1px solid #B83B5E",
+        padding: "10px",
+        color: "#B83B5E",
+      },
+      iconTheme: {
+        primary: "#B83B5E",
+        secondary: "#FFFAEE",
+      },
+    });
   };
 
   const addToItem = () => {
     dispatch(addItem(item));
+    toast.success("Added to cart", {
+      style: {
+        border: "1px solid #B83B5E",
+        padding: "10px",
+        color: "#B83B5E",
+      },
+      iconTheme: {
+        primary: "#B83B5E",
+        secondary: "#FFFAEE",
+      },
+    });
   };
 
   return (
