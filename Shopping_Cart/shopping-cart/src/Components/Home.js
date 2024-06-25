@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import HomeShimmerUI from "./HomeShimmerUI";
+import Item from "./Item";
 
 function Home() {
   const API_URL = "https://fakestoreapi.com/products";
@@ -22,7 +24,21 @@ function Home() {
     fetchProductData();
   }, []);
 
-  return <div></div>;
+  return (
+    <div className="max-w-[75%] py-10 mt-[4.5rem] mx-auto">
+      {loading ? (
+        <HomeShimmerUI />
+      ) : products.length > 0 ? (
+        <div className="flex flex-wrap justify-center gap-[30px] gap-y-9">
+          {products.map((item) => (
+            <Item key={item.id} item={item} />
+          ))}
+        </div>
+      ) : (
+        <h1>No data found</h1>
+      )}
+    </div>
+  );
 }
 
 export default Home;
