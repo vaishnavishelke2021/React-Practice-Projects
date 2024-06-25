@@ -37,9 +37,16 @@ function Cart() {
                 $ {totalAmount}
               </span>
             </h1>
-            <button className="bg-green-700 w-fit px-10 py-[7px] border-[1.7px] hover:border-green-700 hover:text-green-700 hover:bg-[#f6f6f6] transition ease-in cursor-pointer duration-100 mt-3 text-[#f6f6f6] font-medium rounded-md">
-              Checkout
-            </button>
+            <div className="flex gap-x-3">
+              <button className="bg-green-700 w-fit px-10 py-[7px] border-[1.7px] hover:border-green-700 hover:text-green-700 hover:bg-[#f6f6f6] transition ease-in cursor-pointer duration-100 mt-4 text-[#f6f6f6] font-medium rounded-md">
+                Checkout now
+              </button>
+              <NavLink to="/">
+                <button className="bg-rose w-fit text-[#f6f6f6] rounded-md mt-4 font-medium py-[7px] px-10 transition ease-in duration-100 hover:bg-[#f6f6f6] border-[1.7px] border-rose hover:text-rose">
+                  Shop More
+                </button>
+              </NavLink>
+            </div>
           </div>
         </div>
       ) : (
