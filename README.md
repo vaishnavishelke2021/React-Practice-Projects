@@ -22,3 +22,6 @@ https://random-gif-generator-vs.netlify.app/
 
 ## 6] Tech Blog Site
 https://tech-blog-vs.netlify.app/
+
+## 7] Shopping Cart App
+https://shopping-cart-app-vs.netlify.app/
