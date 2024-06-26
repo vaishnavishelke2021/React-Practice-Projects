@@ -32,12 +32,12 @@ function Cart() {
   return (
     <div className="max-w-[75%] py-10 mt-[4.5rem] mx-auto">
       {cart.length > 0 ? (
-        <div className="flex justify-between">
+        <div className="flex md:justify-between flex-col md:flex-row md:items-start justify-center items-center flex-wrap">
           {/* ---------------cart items ------------------------- */}
-          <div className="w-[50%] flex flex-col gap-y-4">
+          <div className="md:w-[50%] w-[100%] flex flex-col  gap-y-4">
             <button
               onClick={clearCart}
-              className="hover:bg-rose text-[15px] w-fit text-[#f6f6f6] rounded-md mt-3 font-medium py-[5px] px-5 transition ease-in duration-100 bg-[#f6f6f6] border-[1.7px] border-rose hover:text-[#f6f6f6] text-rose"
+              className="hover:bg-rose text-[15px] w-fit text-[#f6f6f6] rounded-md font-medium py-[5px] px-5 transition ease-in duration-100 bg-[#f6f6f6] border-[1.7px] border-rose hover:text-[#f6f6f6] text-rose"
             >
               Clear cart
             </button>
@@ -47,15 +47,15 @@ function Cart() {
           </div>
 
           {/* -------------------------summary------------------------------ */}
-          <div className="flex justify-start flex-col w-[45%] px-10 ">
-            <p className="uppercase text-[17px] text-rose font-semibold">
+          <div className="flex justify-start flex-col w-[100%] md:w-[45%] md:px-10 mt-6 md:mt-0 ">
+            <p className="uppercase text-[17px] text-rose font-semibold hidden md:block">
               your cart
             </p>
-            <h1 className="text-[2.9rem] font-bold text-rose -mt-2">SUMMARY</h1>
-            <h4 className="text-[19px] font-medium text-zinc-700 mt-16">
+            <h1 className="md:text-[2.9rem] text-[2rem] font-bold text-rose -mt-2 hidden md:block">SUMMARY</h1>
+            <h4 className="text-[19px] font-medium text-zinc-700 mt-4 md:mt-16">
               Total Items: {cart.length}
             </h4>
-            <h1 className="text-[19px] font-medium text-zinc-700 mt-1">
+            <h1 className="text-[19px] font-medium text-zinc-700 md:mt-1">
               Total Amount:{" "}
               <span className="font-extrabold text-green-700">
                 $ {totalAmount}
@@ -63,12 +63,12 @@ function Cart() {
             </h1>
 
             {/* ------------------------------- buttons --------------------------- */}
-            <div className="flex gap-x-3">
-              <button className="bg-green-700 w-fit px-10 py-[7px] border-[1.7px] hover:border-green-700 hover:text-green-700 hover:bg-[#f6f6f6] transition ease-in cursor-pointer duration-100 mt-4 text-[#f6f6f6] font-medium rounded-md">
+            <div className="flex gap-x-1 md:gap-x-3 flex-wrap">
+              <button className="bg-green-700 w-fit text-[14px] md:text-[16px] px-4 md:px-10 md:py-[7px] py-[5px] border-[1.7px] hover:border-green-700 hover:text-green-700 hover:bg-[#f6f6f6] transition ease-in cursor-pointer duration-100 mt-4 text-[#f6f6f6] font-medium rounded-md">
                 Checkout now
               </button>
               <NavLink to="/">
-                <button className="bg-rose w-fit text-[#f6f6f6] rounded-md mt-4 font-medium py-[7px] px-10 transition ease-in duration-100 hover:bg-[#f6f6f6] border-[1.7px] border-rose hover:text-rose">
+                <button className="bg-rose w-fit text-[14px] md:text-[16px] text-[#f6f6f6] rounded-md mt-4 font-medium py-[5px] md:py-[7px] px-4 md:px-10 transition ease-in duration-100 hover:bg-[#f6f6f6] border-[1.7px] hover:border-rose hover:text-rose">
                   Shop More
                 </button>
               </NavLink>
@@ -76,9 +76,10 @@ function Cart() {
           </div>
         </div>
       ) : (
+        // ----------------- if cart is empty ---------------------------------------
         <div className="flex flex-col justify-center items-center w-full h-[70vh]">
-          <h1 className="text-2xl font-bold ">Your cart is empty!</h1>
-          <p className="text-[15px] font-medium text-[#161616]/80 mt-0">
+          <h1 className="text-2xl font-bold text-center">Your cart is empty!</h1>
+          <p className="text-[15px] text-center font-medium text-[#161616]/80 mt-0">
             Add items to the cart
           </p>
           <NavLink to="/">
