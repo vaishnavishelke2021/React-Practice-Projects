@@ -1,3 +1,23 @@
+# Project Link
+https://shopping-cart-app-vs.netlify.app/
+
+
+# Snapshots
+![shimmer](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/ecef7ed1-63be-430c-af7f-e33a1a79ad8a)
+
+![home](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/cdb5d9c4-bb98-4278-8a49-12f3e22f52b7)
+
+![toasts](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/5050c440-3d37-40dd-99ff-7ec7e7a0d6f9)
+
+![cart](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/669ac765-2296-41d3-97a9-24d42baab027)
+
+![empty cart](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/493d875a-b4d1-427e-9f89-41dc70830ae0)
+
+![InShot_20240626_124118808](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/f00bad50-b30f-42f9-a7c6-e2d30489cf16)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
