@@ -13,6 +13,29 @@ function Board() {
     setIsXTurn(!isXTurn);
   };
 
+  const checkWinner = () => {
+    let winner = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [2, 4, 6],
+      [1, 4, 8],
+    ];
+
+    for (let w of winner) {
+      const [a, b, c] = w;
+      if (state[a] !== null && state[a] === state[b] && state[a] === state[c]) {
+        return true;
+      }
+      return false;
+    }
+  };
+
+  const isWinner = checkWinner();
+
   return (
     <div className="board">
       <div className="row">
