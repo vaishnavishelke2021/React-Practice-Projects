@@ -74,6 +74,15 @@ function Board() {
         </div>
       ) : (
         <>
+          <h1
+            style={{
+              marginBottom: "18px",
+              fontSize: "18px",
+              fontWeight: "600",
+            }}
+          >
+            Player {isXTurn ? "X's" : "O's"} Turn!
+          </h1>
           <div className="row">
             <Square onClick={() => handleClick(0)} value={state[0]} />
             <Square onClick={() => handleClick(1)} value={state[1]} />
