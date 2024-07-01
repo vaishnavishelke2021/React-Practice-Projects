@@ -36,14 +36,42 @@ function Board() {
 
   const isWinner = checkWinner();
 
+  function handlePlayAgain() {
+    setState(Array(9).fill(null));
+  }
+
   return (
     <div className="board">
       {isWinner ? (
-        <h2>
-          {" "}
-          &nbsp;<span style={{ color: "green" }}>{isWinner} Won </span> The
-          Game!&nbsp;
-        </h2>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h2>
+            {" "}
+            &nbsp;<span style={{ color: "green" }}>{isWinner} Won </span> The
+            Game!&nbsp;
+          </h2>
+          <button
+            style={{
+              marginTop: "20px",
+              backgroundColor: "black",
+              color: "#f6f6f6",
+              border: "none",
+              borderRadius: "3px",
+              padding: "9px 15px",
+              fontSize: "15px",
+              cursor: "pointer",
+            }}
+            onClick={handlePlayAgain}
+          >
+            Play Again
+          </button>
+        </div>
       ) : (
         <>
           <div className="row">
