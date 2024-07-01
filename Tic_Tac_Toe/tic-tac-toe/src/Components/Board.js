@@ -46,46 +46,19 @@ function Board() {
   return (
     <div className="board">
       {isWinner ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
+        <div className="winnerBox">
           <h2>
             {" "}
             &nbsp;<span style={{ color: "green" }}>{isWinner} Won </span> The
             Game!&nbsp;
           </h2>
-          <button
-            style={{
-              marginTop: "20px",
-              backgroundColor: "black",
-              color: "#f6f6f6",
-              border: "none",
-              borderRadius: "3px",
-              padding: "9px 15px",
-              fontSize: "15px",
-              cursor: "pointer",
-            }}
-            onClick={handlePlayAgain}
-          >
+          <button className="button" onClick={handlePlayAgain}>
             Play Again
           </button>
         </div>
       ) : (
         <>
-          <h1
-            style={{
-              marginBottom: "18px",
-              fontSize: "18px",
-              fontWeight: "600",
-            }}
-          >
-            Player {isXTurn ? "X's" : "O's"} Turn!
-          </h1>
+          <h1 className="turn">Player {isXTurn ? "X's" : "O's"} Turn!</h1>
           <div className="row">
             <Square onClick={() => handleClick(0)} value={state[0]} />
             <Square onClick={() => handleClick(1)} value={state[1]} />
