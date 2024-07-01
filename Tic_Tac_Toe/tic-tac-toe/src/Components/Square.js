@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Square() {
+function Square({ value }) {
   return (
-    <div className='box'>
-      <h3>X</h3>
+    <div className="box">
+      <h3>{value}</h3>
     </div>
-  )
+  );
 }
 
-export default Square
+export default Square;
