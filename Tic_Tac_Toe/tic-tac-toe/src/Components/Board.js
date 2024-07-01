@@ -3,10 +3,16 @@ import Square from "./Square";
 
 function Board() {
   const [state, setState] = useState(Array(9).fill(null));
+  const [isXTurn, setIsXTurn] = useState(true);
 
   const handleClick = (index) => {
     console.log("clicked", index);
+    let copyState = [...state];
+    setState(copyState);
+    copyState[index] = isXTurn ? "X" : "O";
+    setIsXTurn(!isXTurn);
   };
+
   return (
     <div className="board">
       <div className="row">
