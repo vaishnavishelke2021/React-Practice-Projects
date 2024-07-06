@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 ::selection {
-  background: #f6f6f6;
-  color: #5e49d1;
+  background: #161616;
+  color: #e65c19;
 }
 
 * {
@@ -20,4 +20,18 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #161616;
   color: #f6f6f6;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f6f6f640;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e65c19;
 }
