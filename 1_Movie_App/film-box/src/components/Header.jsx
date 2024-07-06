@@ -58,11 +58,13 @@ const Header = () => {
           </p>
         </div>
 
-        <Link className="bg-orange px-4 py-2 w-fit rounded-[4px] mt-1 hover:bg-secondary hover:text-primary transition-all duration-200">Watch Trailer</Link>
+        <Link className="bg-orange px-4 py-2 w-fit rounded-[4px] mt-1 hover:bg-secondary hover:text-primary transition-all duration-200">
+          Watch Trailer
+        </Link>
       </div>
     </div>
   ) : (
-    <h1>no</h1>
+    <h1 className="w-full h-[50vh] flex justify-center items-center bg-[#1e1e1e]"><span className="loader"></span></h1>
   );
 };
 
