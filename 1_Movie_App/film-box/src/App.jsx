@@ -1,7 +1,12 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+
 const App = () => {
   return (
-    <div className="w-full h-screen bg-backgroundColor">
-      <h1 className="text-[20px] font-light">App</h1>
+    <div className="w-full h-screen">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 };
