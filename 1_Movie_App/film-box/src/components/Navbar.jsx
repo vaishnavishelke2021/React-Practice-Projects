@@ -21,19 +21,19 @@ const Navbar = () => {
           New Feeds
         </h1>
         <div className="flex flex-col mt-5 gap-y-1 text-secondary/50">
-          <Link className="flex justify-start gap-x-[10px] items-center hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <RiFireFill /> <span>Trending</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <RiSparklingFill /> <span>Popular</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <RiMovie2Fill /> <span>Movies</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <PiTelevisionSimpleFill /> <span>TV Shows</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <IoIosPeople /> <span>People</span>
           </Link>
         </div>
@@ -46,10 +46,10 @@ const Navbar = () => {
           Website Information
         </h1>
         <div className=" flex flex-col mt-5 gap-y-1 text-secondary/50">
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <IoIosInformationCircle /> <span>About</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-toColor py-3 px-5 rounded-sm hover:text-secondary transition-all duration-200">
+          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
             <BiSolidPhoneCall /> <span>Contact</span>
           </Link>
         </div>
