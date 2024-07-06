@@ -1,11 +1,28 @@
-import { useState } from "react";
+import axios from "../utils/axios";
+import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import noimg from "../../public/no-image.png";
 
 function SearchBar() {
   const [query, setQuery] = useState("");
-  console.log(query);
+  const [searches, setSearches] = useState([]);
+  //   console.log(query);
+
+  const getSearchResult = async () => {
+    try {
+      const { data } = await axios.get(`/search/multi?query=${query}`);
+      console.log(data);
+      setSearches(data.results);
+    } catch (e) {
+      console.log("error: ", e);
+    }
+  };
+
+  useEffect(() => {
+    getSearchResult();
+  }, [query]);
 
   return (
     <div className="w-[45%] mx-auto h-[9vh] flex justify-center items-center gap-x-3 relative">
@@ -26,14 +43,25 @@ function SearchBar() {
 
       {/* =================================movies reccommendation================================ */}
       <div className="w-full bg-[#1e1e1e] absolute top-[100%] max-h-[50vh] overflow-auto">
-        {/* <Link className="flex gap-x-5 justify-start items-center px-8 py-5 bg-[#1e1e1e] border-b border-secondary/20 w-[100%] mx-auto hover:bg-zinc-800/70 transition-all duration-200">
-          <img
-            src=""
-            className="w-[4rem] h-[3.6rem] bg-white rounded-sm"
-            alt=""
-          />
-          <h2>The Avengers</h2>
-        </Link> */}
+        {searches.map((s) => (
+          <Link
+            key={s.id}
+            className="flex gap-x-5 justify-start items-center px-8 py-5 bg-[#1e1e1e] border-b border-secondary/20 w-[100%] mx-auto hover:bg-zinc-800/70 transition-all duration-200"
+          >
+            <img
+              src={
+                s.backdrop_path || s.profile_path
+                  ? `https://image.tmdb.org/t/p/original/${
+                      s.backdrop_path || s.profile_path
+                    }`
+                  : noimg
+              }
+              className="w-[4rem] h-[3.6rem] bg-cover object-cover rounded-sm"
+              alt=""
+            />
+            <h2>{s.name || s.title || s.original_name || s.original_title}</h2>
+          </Link>
+        ))}
       </div>
     </div>
   );
