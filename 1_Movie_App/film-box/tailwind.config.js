@@ -6,8 +6,7 @@ export default {
       colors: {
         primary: "#161616",
         secondary: "#f6f6f6", 
-        fromColor: "#67029d",
-        toColor: "#a73de4",
+        orange: "#E65C19",
       },
     },
   },
