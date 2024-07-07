@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 const MainPage = () => {
   return (
-    <div className="w-[82%] p-2 overflow-hidden overflow-y-auto">
+    <div className="w-[82%] p-2 overflow-auto overflow-x-hidden">
       <SearchBar />
       <Header />
       <HorizontalCards />
