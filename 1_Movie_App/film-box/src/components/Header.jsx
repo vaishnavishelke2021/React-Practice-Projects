@@ -28,7 +28,7 @@ const Header = () => {
     <div
       className="w-full h-[50vh] object-cover flex justify-start items-end"
       style={{
-        background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7), rgba(0,0,0,.9)), url(https://image.tmdb.org/t/p/original/${
+        background: `linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5), rgba(0,0,0,.7)), url(https://image.tmdb.org/t/p/original/${
           wallpaper.backdrop_path || wallpaper.profile_path
         })`,
         backgroundPosition: "top 8%",
@@ -64,7 +64,9 @@ const Header = () => {
       </div>
     </div>
   ) : (
-    <h1 className="w-full h-[50vh] flex justify-center items-center bg-[#1e1e1e]"><span className="loader"></span></h1>
+    <h1 className="w-full h-[50vh] flex justify-center items-center bg-[#1e1e1e]">
+      <span className="loader"></span>
+    </h1>
   );
 };
 
