@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./HCard";
 import axios from "../utils/axios";
 import { useEffect, useState } from "react";
 import Dropdown from "./Dropdown";

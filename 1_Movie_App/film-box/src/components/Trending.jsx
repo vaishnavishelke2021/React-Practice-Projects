@@ -1,7 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Dropdown from "./Dropdown";
 import { useEffect, useState } from "react";
+import axios from "../utils/axios";
+import VCard from "./VCard";
 
 const Trending = () => {
   document.title = "FilmBox | Trending";
@@ -51,6 +53,12 @@ const Trending = () => {
             onCategoryChange={setDuration}
           />
         </div>
+      </div>
+
+      <div className="flex gap-y-5 flex-wrap justify-between py-10 mt-3">
+        {trending?.map((t) => (
+          <VCard key={t.id} t={t} />
+        ))}
       </div>
     </div>
   );
