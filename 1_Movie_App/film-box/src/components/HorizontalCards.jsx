@@ -23,7 +23,7 @@ const HorizontalCards = () => {
 
   return trending ? (
     <div className="w-full p-10">
-      <div className="flex justify-between items-center w-full py-4 pr-16">
+      <div className="flex justify-between items-center w-full py-4 pr-0">
         <h1 className="text-[1.4rem] font-semibold">Trending</h1>
         <Dropdown
           title="Filter"
