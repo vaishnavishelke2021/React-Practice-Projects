@@ -1,6 +1,6 @@
 const Dropdown = ({ title, options }) => {
   return (
-    <div className="relative inline-block w-full">
+    <div className=" w-[9rem]">
       <select
         name="format"
         id="format"
@@ -17,7 +17,7 @@ const Dropdown = ({ title, options }) => {
           </option>
         ))}
       </select>
-      <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+      {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
         <svg
           className="w-4 h-4 text-gray-300"
           viewBox="0 0 20 20"
@@ -29,7 +29,7 @@ const Dropdown = ({ title, options }) => {
             clipRule="evenodd"
           />
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 };

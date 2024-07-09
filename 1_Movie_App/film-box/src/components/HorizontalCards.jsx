@@ -1,6 +1,7 @@
 import Card from "./Card";
 import axios from "../utils/axios";
 import { useEffect, useState } from "react";
+import Dropdown from "./Dropdown";
 
 const HorizontalCards = () => {
   const [trending, setTrending] = useState(null);
@@ -21,7 +22,10 @@ const HorizontalCards = () => {
 
   return trending ? (
     <div className="w-full p-10">
-      <h1 className="text-xl font-semibold mb-6 mt-3">Trending</h1>
+      <div className="flex justify-between items-center w-full py-4 pr-16">
+        <h1 className="text-[1.4rem] font-semibold">Trending</h1>
+        <Dropdown title="Filter" options={["tv", "movies", "all"]} />
+      </div>
 
       <div className="w-full flex flex-row gap-4 overflow-x-auto">
         {trending?.map((t) => (
