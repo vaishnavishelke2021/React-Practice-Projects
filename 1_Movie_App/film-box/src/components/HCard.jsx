@@ -9,10 +9,10 @@ const Card = ({ t }) => {
         alt=""
       />
 
-      <h1 className="text-[1rem] shadow-lg font-extrabold mt-2">
+      <h1 className="text-[1rem]  font-extrabold mt-2">
         {t.name || t.title || t.original_name || t.original_title}
       </h1>
-      <p className="text-[12px] text-secondary/60 shadow-lg mt-2">
+      <p className="text-[12px] text-secondary/60  mt-2">
         {t.overview.slice(0, 80)} <span className="text-zinc-600">more...</span>
       </p>
     </div>

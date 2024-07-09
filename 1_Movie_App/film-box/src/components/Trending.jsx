@@ -36,7 +36,9 @@ const Trending = () => {
           >
             ◀
           </p>
-          <h1 className="text-[1.4rem] font-semibold">Trending</h1>
+          <h1 className="text-[1.4rem] font-semibold w-[13rem]">
+            Trending : {category.toUpperCase()}
+          </h1>
         </div>
         <SearchBar />
         <div className="flex gap-x-3">

@@ -36,18 +36,18 @@ const Header = () => {
       }}
     >
       <div className="py-10 px-10 max-w-[78%]  flex flex-col gap-y-3">
-        <h1 className="text-4xl shadow-lg font-extrabold">
+        <h1 className="text-4xl font-extrabold">
           {wallpaper.name ||
             wallpaper.title ||
             wallpaper.original_name ||
             wallpaper.original_title}
         </h1>
-        <p className="text-[14px] text-secondary/60 shadow-lg">
+        <p className="text-[14px] text-secondary/60 ">
           {wallpaper.overview.slice(0, 210)}{" "}
           <span className="text-blue-500">more...</span>
         </p>
 
-        <div className="flex gap-x-6 text-[14px] shadow-lg">
+        <div className="flex gap-x-6 text-[14px] ">
           <p className="flex gap-x-[7px] justify-start items-center">
             <HiSpeakerphone className="text-yellow-400" />{" "}
             {wallpaper.release_date || "No Information"}
