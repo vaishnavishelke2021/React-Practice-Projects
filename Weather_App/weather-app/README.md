@@ -1,3 +1,6 @@
+# Snapshot 
+![weatherApp](https://github.com/vaishnavishelke2021/React-Course/assets/89862255/c885668a-50ba-4b0a-be92-27a1f1283e32)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
