@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./Button";
+import { useWeatherData } from "../context/WeatherContext";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
+  const { search, setSearch, fetchData } = useWeatherData();
+
+  function handleSearch() {
+    console.log("Search clicked");
+    fetchData();
+  }
+
   return (
-    <div className="flex gap-x-1 mx-auto w-[30%] mt-12">
+    <div className="flex gap-x-1 mx-auto w-[26%] mt-12">
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -12,7 +19,7 @@ const Search = () => {
         type="text"
         placeholder="search city"
       />
-      <Button value={"Search"} />
+      <Button value={"Search"} onClick={handleSearch} />
     </div>
   );
 };
