@@ -39,10 +39,16 @@ const Navbar = () => {
           >
             <RiMovie2Fill /> <span>Movies</span>
           </Link>
-          <Link to="/tvshows" className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
+          <Link
+            to="/tvshows"
+            className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200"
+          >
             <PiTelevisionSimpleFill /> <span>TV Shows</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
+          <Link
+            to="/person"
+            className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200"
+          >
             <IoIosPeople /> <span>People</span>
           </Link>
         </div>
