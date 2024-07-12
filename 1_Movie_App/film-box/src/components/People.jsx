@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
+import PersonCard from "./PersonCard";
 
 const People = () => {
   document.title = "FilmBox | People";
@@ -39,7 +40,9 @@ const People = () => {
       </div>
 
       <div className="flex gap-5 gap-x-8 mx-auto flex-wrap justify-center py-10 mt-3">
-        
+        {person?.map((t) => (
+          <PersonCard key={t.id} t={t} />
+        ))}
       </div>
     </div>
   );
