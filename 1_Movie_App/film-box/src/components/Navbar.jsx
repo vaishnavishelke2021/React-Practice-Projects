@@ -21,13 +21,22 @@ const Navbar = () => {
           New Feeds
         </h1>
         <div className="flex flex-col mt-5 gap-y-1 text-secondary/50">
-          <Link to="/trending" className="flex justify-start gap-x-[10px] items-center hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
+          <Link
+            to="/trending"
+            className="flex justify-start gap-x-[10px] items-center hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200"
+          >
             <RiFireFill /> <span>Trending</span>
           </Link>
-          <Link to="/popular" className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
+          <Link
+            to="/popular"
+            className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200"
+          >
             <RiSparklingFill /> <span>Popular</span>
           </Link>
-          <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
+          <Link
+            to="/movies"
+            className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200"
+          >
             <RiMovie2Fill /> <span>Movies</span>
           </Link>
           <Link className="flex justify-start gap-x-[10px] items-center  hover:bg-orange py-3 px-5 rounded-[4px] hover:text-secondary transition-all duration-200">
