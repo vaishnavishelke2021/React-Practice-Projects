@@ -44,7 +44,12 @@ const Header = () => {
         </h1>
         <p className="text-[14px] text-secondary/60 ">
           {wallpaper.overview.slice(0, 210)}{" "}
-          <span className="text-blue-500">more...</span>
+          <Link
+            to={`/${wallpaper.media_type}/details/${wallpaper.id}}`}
+            className="text-blue-500"
+          >
+            more...
+          </Link>
         </p>
 
         <div className="flex gap-x-6 text-[14px] ">
