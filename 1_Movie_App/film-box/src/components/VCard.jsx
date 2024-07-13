@@ -1,6 +1,12 @@
+import { Link } from "react-router-dom";
+
 const VCard = ({ t }) => {
+  console.log(t);
   return (
-    <div className="relative w-[23.5%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl">
+    <Link
+      to={`/${t.media_type}/details/${t.id}}`}
+      className="relative w-[23.5%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl"
+    >
       <img
         className="w-full h-[200px] object-cover rounded-[2px]"
         src={`https://image.tmdb.org/t/p/original/${
@@ -19,7 +25,7 @@ const VCard = ({ t }) => {
       <div className="absolute top-3 right-3 shadow-lg bg-orange text-[13.5px] text-secondary text-extrabold p-2 flex justify-center items-center rounded-full w-[35px] h-[35px]">
         {(t.vote_average * 10).toFixed()} <span className="text-[10px]">%</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

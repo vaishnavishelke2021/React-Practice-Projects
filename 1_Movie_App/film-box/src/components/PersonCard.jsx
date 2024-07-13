@@ -1,6 +1,12 @@
+import { Link } from "react-router-dom";
+
 const PersonCard = ({ t }) => {
+  console.log(t);
   return (
-    <div className="w-[14%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl">
+    <Link
+      to={`/person/details/${t.name}`}
+      className="w-[14%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl"
+    >
       <img
         className="w-full h-[230px] object-cover rounded-[2px]"
         src={`https://image.tmdb.org/t/p/original/${
@@ -13,7 +19,7 @@ const PersonCard = ({ t }) => {
         {t.name || t.title || t.original_name || t.original_title}
       </h1>
       <p className="text-[13px] mt-1 text-secondary/70">{`Popularity : ${t.popularity}`}</p>
-    </div>
+    </Link>
   );
 };
 
