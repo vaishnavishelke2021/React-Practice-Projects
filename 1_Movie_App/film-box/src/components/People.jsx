@@ -41,7 +41,7 @@ const People = () => {
 
       <div className="flex gap-5 gap-x-8 mx-auto flex-wrap justify-center py-10 mt-3">
         {person?.map((t) => (
-          <PersonCard key={t.id} t={t} />
+          <PersonCard key={t.id} t={t} title="person"/>
         ))}
       </div>
     </div>

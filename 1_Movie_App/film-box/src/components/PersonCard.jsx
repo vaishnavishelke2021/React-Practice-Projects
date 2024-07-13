@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const PersonCard = ({ t }) => {
+const PersonCard = ({ t, title }) => {
   console.log(t);
   return (
     <Link
-      to={`/person/details/${t.name}`}
+      to={`/person/details/${t.name || title}`}
       className="w-[14%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl"
     >
       <img

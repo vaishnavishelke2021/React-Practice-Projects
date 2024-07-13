@@ -52,7 +52,7 @@ const Popular = () => {
 
       <div className="flex gap-y-5 flex-wrap justify-between py-10 mt-3">
         {popular?.map((t) => (
-          <VCard key={t.id} t={t} />
+          <VCard key={t.id} t={t} title={category} />
         ))}
       </div>
     </div>

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const VCard = ({ t }) => {
-  console.log(t);
+const VCard = ({ t, title }) => {
+  console.log(title);
   return (
     <Link
-      to={`/${t.media_type}/details/${t.id}}`}
+      to={`/${t.media_type || title}/details/${t.id}}`}
       className="relative w-[23.5%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl"
     >
       <img
