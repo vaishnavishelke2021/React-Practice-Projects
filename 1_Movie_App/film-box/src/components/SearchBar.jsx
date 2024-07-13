@@ -25,7 +25,7 @@ function SearchBar() {
   }, [query]);
 
   return (
-    <div className="w-[45%] mx-auto h-[9vh] flex justify-center items-center gap-x-3 relative">
+    <div className="w-[45%] mx-auto h-[9vh] flex justify-center items-center gap-x-3 relative z-10">
       <FiSearch className="text-[1.18rem]" />
       <input
         value={query}
@@ -42,7 +42,7 @@ function SearchBar() {
       )}
 
       {/* =================================movies reccommendation================================ */}
-      <div className="w-full bg-[#1e1e1e] absolute top-[100%] max-h-[50vh] overflow-auto">
+      <div className="w-full bg-[#1e1e1e] absolute top-[100%] max-h-[50vh] overflow-auto shadow-black/50 shadow-lg">
         {searches.map((s) => (
           <Link
             key={s.id}
