@@ -45,6 +45,7 @@ function SearchBar() {
       <div className="w-full bg-[#1e1e1e] absolute top-[100%] max-h-[50vh] overflow-auto shadow-black/50 shadow-lg">
         {searches.map((s) => (
           <Link
+            to={`/${s.media_type}/details/${s.id}`}
             key={s.id}
             className="flex gap-x-5 justify-start items-center px-8 py-5 bg-[#1e1e1e] border-b border-secondary/20 w-[100%] mx-auto hover:bg-zinc-800/70 transition-all duration-200"
           >
