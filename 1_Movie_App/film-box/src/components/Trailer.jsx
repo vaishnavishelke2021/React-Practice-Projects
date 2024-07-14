@@ -2,6 +2,7 @@ import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
+import Error from "./Error";
 
 const Trailer = () => {
   const navigate = useNavigate();
@@ -16,11 +17,15 @@ const Trailer = () => {
       >
         <IoClose />
       </Link>
-      <ReactPlayer
-        width={1250}
-        height={580}
-        url={`https://www.youtube.com/watch?v=${ytvideo.key}`}
-      />
+      {ytvideo ? (
+        <ReactPlayer
+          width={1250}
+          height={580}
+          url={`https://www.youtube.com/watch?v=${ytvideo.key}`}
+        />
+      ) : (
+        <Error />
+      )}
     </div>
   );
 };

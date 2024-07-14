@@ -9,6 +9,7 @@ import MovieDetails from "./components/MovieDetails";
 import TvDetails from "./components/TvDetails";
 import PersonDetails from "./components/PersonDetails";
 import Trailer from "./components/Trailer";
+import Error from "./components/Error";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/tv/details/:id" element={<TvDetails />} />
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
