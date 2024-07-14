@@ -216,7 +216,9 @@ const MovieDetails = () => {
       {/* ---------------------------------------------------------------------------------------- */}
     </div>
   ) : (
-    <h1>Loading...</h1>
+    <div className="w-full h-screen flex justify-center items-center">
+      <span className="loader2"></span>
+    </div>
   );
 };
 
