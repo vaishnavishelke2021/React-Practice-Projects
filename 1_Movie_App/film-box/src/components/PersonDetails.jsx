@@ -11,6 +11,7 @@ import {
 import { IoMdArrowBack } from "react-icons/io";
 
 const PersonDetails = () => {
+  const [more, setMore] = useState(false);
   const navigate = useNavigate();
   // const { pathname } = useLocation();
   const { id } = useParams();
@@ -44,6 +45,25 @@ const PersonDetails = () => {
             src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path}`}
             alt=""
           />
+        </div>
+
+        {/* --------------------details and overview--------------------------- */}
+        <div className="text-start w-[73%] ">
+          <h1 className="text-3xl font-bold">{info.detail.name}</h1>
+          <p className="text-secondary/90 mt-7 font-semibold">
+            <h5 className="text-[17px]">Biography</h5>
+            <p className="text-secondary/50 text-[16px] mt-1  font-normal">
+              {more
+                ? info.detail.biography
+                : info.detail.biography.substring(0, 280)}{" "}
+              <span
+                onClick={() => setMore(!more)}
+                className="cursor-pointer text-zinc-600"
+              >
+                {more ? " less" : " more..."}
+              </span>{" "}
+            </p>
+          </p>
         </div>
       </div>
     </div>
