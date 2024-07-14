@@ -63,7 +63,7 @@ const Header = () => {
           </p>
         </div>
 
-        <Link className="bg-orange px-4 py-2 w-fit rounded-[4px] mt-1 hover:bg-secondary hover:text-primary transition-all duration-200">
+        <Link to={`/${wallpaper.media_type}/details/${wallpaper.id}/trailer`} className="bg-orange px-4 py-2 w-fit rounded-[4px] mt-1 hover:bg-secondary hover:text-primary transition-all duration-200">
           Watch Trailer
         </Link>
       </div>
