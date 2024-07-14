@@ -3,8 +3,6 @@ export { removeMovie } from "../reducers/movieSlice";
 import axios from "../../utils/axios";
 import { loadMovie } from "../reducers/movieSlice";
 
-// import { loadMovie } from "../reducers/movieSlice";
-
 export const asyncloadmovie = (id) => async (dispatch, getState) => {
   try {
     const detail = await axios.get(`/movie/${id}`);
@@ -19,7 +17,7 @@ export const asyncloadmovie = (id) => async (dispatch, getState) => {
       recommendations: recommendations.data.results,
       similar: similar.data.results,
       videos: videos.data.results.find((m) => m.type === "Trailer"),
-      watchproviders: watchproviders.data.results,
+      watchproviders: watchproviders.data.results.IN,
     };
 
     dispatch(loadMovie(theUltimateData));
