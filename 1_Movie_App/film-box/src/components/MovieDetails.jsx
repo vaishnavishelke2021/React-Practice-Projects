@@ -6,6 +6,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import { FaLink } from "react-icons/fa6";
 import { LiaImdb } from "react-icons/lia";
 import { IoMdArrowBack } from "react-icons/io";
+import HCard from "../components/HCard";
 
 const MovieDetails = () => {
   const navigate = useNavigate();
@@ -197,6 +198,22 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* -------------------------------------Recommendations------------------------------------ */}
+      <div className="w-full py-4 ">
+        <div className="w-[90%] mx-auto py-10">
+          <h1 className="text-xl font-semibold py-5">
+            Recommendations & Similar
+          </h1>
+          <div className="w-full flex flex-row gap-4 overflow-x-auto">
+            {info.recommendations.length > 0
+              ? info.recommendations?.map((t) => <HCard key={t.id} t={t} />)
+              : info.similar?.map((t) => <HCard key={t.id} t={t} />)}
+            {}
+          </div>
+        </div>
+      </div>
+      {/* ---------------------------------------------------------------------------------------- */}
     </div>
   ) : (
     <h1>Loading...</h1>
