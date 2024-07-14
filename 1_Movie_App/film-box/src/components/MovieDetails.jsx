@@ -1,7 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncloadmovie, removeMovie } from "../store/actions/movieActions";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { FaLink } from "react-icons/fa6";
 import { LiaImdb } from "react-icons/lia";
@@ -148,7 +154,6 @@ const MovieDetails = () => {
                 {/* -------------------trailer link --------------- */}
                 <div className="mt-10">
                   <Link
-                    target="_blank"
                     to={`${pathname}/trailer`}
                     className="bg-orange px-4 py-2 w-fit rounded-[4px] hover:bg-secondary hover:text-primary transition-all duration-200"
                   >
@@ -214,6 +219,7 @@ const MovieDetails = () => {
         </div>
       </div>
       {/* ---------------------------------------------------------------------------------------- */}
+      <Outlet />
     </div>
   ) : (
     <div className="w-full h-screen flex justify-center items-center">
