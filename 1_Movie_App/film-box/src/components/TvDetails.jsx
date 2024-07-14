@@ -24,7 +24,7 @@ const TvDetails = () => {
   useEffect(() => {
     dispatch(asyncloadtv(id));
     return () => {
-      dispatch(removetv());
+      dispatch(removeTv());
     };
   }, [id]);
 
@@ -113,7 +113,7 @@ const TvDetails = () => {
                     </h1>
                   </div>
 
-                  <nav className="flex gap-x-4 mt-6 items-center">
+                  <nav className="flex gap-x-4 mt-8 items-center">
                     <a
                       href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
                       target="_blank"
@@ -177,23 +177,43 @@ const TvDetails = () => {
               )}
             </div>
 
-            {/* <div>
-              {info.watchproviders && info.watchproviders.buy && (
-                <div className="flex flex-col gap-y-1">
-                  <h1 className="text-sm">Available to buy</h1>
-                  <div className="flex flex-row gap-x-3">
-                    {info.watchproviders.buy.map((w, i) => (
-                      <img
-                        className="w-[5vh] h-[5vh] rounded-sm object-cover"
-                        key={i}
-                        src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div> */}
             {/* ------------------------------------------------------------------------------  */}
+          </div>
+        </div>
+      </div>
+
+      {/* -------------------------------------Seasons------------------------------------ */}
+      <div className="w-full py-4 ">
+        <div className="w-[90%] mx-auto py-5">
+          <h1 className="text-xl font-semibold py-5">Seasons</h1>
+          <div className="w-full flex flex-row gap-5 overflow-x-auto">
+            {info.detail.seasons.length > 0 ? (
+              info.detail.seasons.map((s) => (
+                <div
+                  className="min-w-[180px] bg-[#1e1e1e] p-2 rounded-[4px] mb-2"
+                  key={s.id}
+                >
+                  <img
+                    className="w-full h-[230px] object-cover rounded-[2px]"
+                    src={`https://image.tmdb.org/t/p/original/${s.poster_path}`}
+                    alt=""
+                  />
+
+                  <h1 className="text-[1rem]  font-semibold mt-2">
+                    {s.name || "No name"}
+                    {"  "}
+                    <span className="text-secondary/30 text-[13px] font-normal">
+                      ({` ${new Date(s.air_date).getFullYear()}`})
+                    </span>
+                  </h1>
+                  <p className="text-sm mt-1 font-normal text-secondary/80">
+                    Episodes: {s.episode_count}
+                  </p>
+                </div>
+              ))
+            ) : (
+              <h1>No seasons available</h1>
+            )}
           </div>
         </div>
       </div>
