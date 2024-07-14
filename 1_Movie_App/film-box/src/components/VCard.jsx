@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import noimg from "../../public/no-image.png";
 
 const VCard = ({ t, title }) => {
   console.log(title);
@@ -9,9 +10,13 @@ const VCard = ({ t, title }) => {
     >
       <img
         className="w-full h-[200px] object-cover rounded-[2px]"
-        src={`https://image.tmdb.org/t/p/original/${
+        src={
           t.backdrop_path || t.poster_path
-        }`}
+            ? `https://image.tmdb.org/t/p/original/${
+                t.backdrop_path || t.poster_path
+              }`
+            : noimg
+        }
         alt=""
       />
 

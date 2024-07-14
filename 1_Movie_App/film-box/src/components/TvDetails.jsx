@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncloadtv, removeTv } from "../store/actions/tvActions";
+import noimg from "../../public/no-image.png";
 import {
   Link,
   Outlet,
@@ -190,12 +191,16 @@ const TvDetails = () => {
             {info.detail.seasons.length > 0 ? (
               info.detail.seasons.map((s) => (
                 <div
-                  className="min-w-[180px] bg-[#1e1e1e] p-2 rounded-[4px] mb-2"
+                  className="w-[180px] bg-[#1e1e1e] p-2 rounded-[4px] mb-2"
                   key={s.id}
                 >
                   <img
                     className="w-full h-[230px] object-cover rounded-[2px]"
-                    src={`https://image.tmdb.org/t/p/original/${s.poster_path}`}
+                    src={
+                      s.poster_path
+                        ? `https://image.tmdb.org/t/p/original/${s.poster_path}`
+                        : noimg
+                    }
                     alt=""
                   />
 
