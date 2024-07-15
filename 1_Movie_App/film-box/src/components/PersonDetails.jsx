@@ -13,8 +13,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import HCard from "./HCard";
+import Dropdown from "./Dropdown";
 
 const PersonDetails = () => {
+  const [category, setCategory] = useState("movie");
   const [more, setMore] = useState(false);
   const navigate = useNavigate();
   // const { pathname } = useLocation();
@@ -56,18 +58,9 @@ const PersonDetails = () => {
             <h1 className="text-xl font-semibold">Personal Info</h1>
             <div className="mt-4">
               <h4 className="text-[15px] text-secondary/80 font-medium">
-                Knowon for
+                Known for
               </h4>
               <p className="text-[14px] font-light text-secondary/60">
-                {info.detail.known_for_department}
-              </p>
-            </div>
-
-            <div className="mt-5">
-              <h4 className="text-[15px] text-secondary/80 font-medium">
-                Knowon credits
-              </h4>
-              <p className="text-[14px] font-extralight text-secondary/60">
                 {info.detail.known_for_department}
               </p>
             </div>
@@ -192,6 +185,36 @@ const PersonDetails = () => {
                   <HCard key={t.id} t={t} />
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* --------------------------------------- acting -------------------------------------- */}
+          <div className="w-full mt-10 pb-10">
+            <div className="flex justify-between items-center w-full py-4 p">
+              <h1 className="text-xl font-semibold">Acting</h1>
+              <Dropdown
+                title="Filter"
+                options={["tv", "movie"]}
+                // fun={(e) => setCategory(e.target.value)}
+                category={category}
+                onCategoryChange={setCategory}
+              />
+            </div>
+
+            <div className="list-disc w-full h-[60vh] border-zinc-800 border overflow-x-hidden overflow-y-auto bg-[#1e1e1e] shadow-xl">
+              {info[category + "Credits"]?.cast.map((c) => (
+                <li
+                  key={c.id}
+                  className="text-secondary/80 p-4 hover:bg-[#161616] hover:text-secondary duration-300 cursor-pointer"
+                >
+                  <Link to={`/${category}/details/${c.id}`}>
+                    <span>
+                      {c.name || c.title || c.original_name || c.original_title}
+                    </span>
+                    <p className="text-secondary/60 ml-[22px] text-sm">{`Character name: ${c.character}`}</p>
+                  </Link>
+                </li>
+              ))}
             </div>
           </div>
 
