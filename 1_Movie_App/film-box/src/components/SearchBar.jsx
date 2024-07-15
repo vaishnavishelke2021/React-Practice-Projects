@@ -31,7 +31,7 @@ function SearchBar() {
   }, [query]);
 
   return (
-    <div className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[45%] mx-auto h-[9vh] flex justify-end   sm:justify-center items-center gap-x-3 relative z-10 px-4 sm:px-0">
+    <div className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[45%] mx-auto h-[9vh] flex justify-end   sm:justify-center items-center gap-x-2 relative z-10 px-4 sm:px-0">
       <FiSearch className="text-[1.18rem] text-secondary/50" />
       <input
         value={query}

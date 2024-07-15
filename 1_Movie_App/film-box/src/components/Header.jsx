@@ -24,7 +24,7 @@ const Header = () => {
 
   return wallpaper ? (
     <div
-      className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover flex justify-start items-end"
+      className="w-full h-[50vh] lg:h-[60vh] object-cover flex justify-start items-end"
       style={{
         background: `linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5), rgba(0,0,0,.7)), url(https://image.tmdb.org/t/p/original/${
           wallpaper.backdrop_path || wallpaper.profile_path

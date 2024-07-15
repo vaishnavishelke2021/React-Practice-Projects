@@ -25,7 +25,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navbarClass = `${isOpen ? "translate-x-0" : "-translate-x-full"} 
-    md:translate-x-0 fixed md:static top-0 left-0 h-full max-w-64 min-w-[200px] md:w-[18%] 
+    md:translate-x-0 fixed md:static top-0 left-0 h-full max-w-64 min-w-[200px] md:w-[18.5%] 
     bg-[#1e1e1e] p-8 shadow-md transition-transform duration-300 ease-in-out z-50`;
 
   return (
@@ -33,7 +33,7 @@ const Navbar = () => {
       {windowWidth < 766 && (
         <button
           onClick={toggleMenu}
-          className="fixed top-4 left-4 z-50 text-white pt-[18px]"
+          className="fixed top-4 left-4 z-50 text-white pt-[12px]"
         >
           {isOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
         </button>
@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className={navbarClass}>
         <div className="flex justify-between items-center mb-8">
           <h1 className="flex justify-start items-center">
-            <img src={logo} className="w-[24px] md:w-[27px] mr-2" alt="logo" />
+            <img src={logo} className="w-[24px] md:w-[28px] mr-2" alt="logo" />
             <span className="text-[1.1rem] md:text-[1.5rem] font-[600]">
               FilmBox
             </span>
@@ -54,10 +54,10 @@ const Navbar = () => {
         </div>
 
         <nav className="flex flex-col">
-          <h1 className="mt-8 text-[0.9rem] md:text-[1.2rem] font-semibold text-secondary/90">
+          <h1 className="mt-5 text-[0.9rem] md:text-[1.1rem] font-semibold text-secondary/90">
             New Feeds
           </h1>
-          <div className="flex flex-col mt-5 gap-y-1 text-secondary/50">
+          <div className="flex flex-col mt-3 gap-y-1 text-secondary/50">
             <NavLink to="/trending" icon={<RiFireFill />} text="Trending" />
             <NavLink to="/popular" icon={<RiSparklingFill />} text="Popular" />
             <NavLink to="/movies" icon={<RiMovie2Fill />} text="Movies" />
@@ -73,16 +73,20 @@ const Navbar = () => {
         <hr className="bg-secondary/20 border-none h-[1.2px] rounded-sm mt-8" />
 
         <nav className="flex flex-col">
-          <h1 className="mt-8 text-[0.9rem] md:text-[1.2rem] font-semibold text-secondary/90">
+          <h1 className="mt-10 text-[0.9rem] md:text-[1.1rem] font-semibold text-secondary/90">
             Website Information
           </h1>
-          <div className="flex flex-col mt-5 gap-y-1 text-secondary/50">
+          <div className="flex flex-col mt-3 gap-y-1 text-secondary/50">
             <NavLink
               to="/about"
               icon={<IoIosInformationCircle />}
-              text="About"
+              text="About Us"
             />
-            <NavLink to="/contact" icon={<BiSolidPhoneCall />} text="Contact" />
+            <NavLink
+              to="/contact"
+              icon={<BiSolidPhoneCall />}
+              text="Contact Us"
+            />
           </div>
         </nav>
       </div>
