@@ -33,7 +33,7 @@ const Navbar = () => {
       {windowWidth < 766 && (
         <button
           onClick={toggleMenu}
-          className="fixed top-4 left-4 z-50 text-white"
+          className="fixed top-4 left-4 z-50 text-white pt-[18px]"
         >
           {isOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
         </button>
