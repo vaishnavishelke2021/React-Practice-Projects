@@ -4,19 +4,23 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import PersonCard from "./PersonCard";
 import Footer from "./Footer";
+import Loading from "./Loading";
 
 const People = () => {
   document.title = "FilmBox | People";
   const navigate = useNavigate();
   const [person, setPerson] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getPersonData = async () => {
+    setLoading(true);
     try {
       const { data } = await axios.get(`/person/popular`);
       setPerson(data.results);
     } catch (e) {
       console.error(e);
     }
+    setLoading(false);
   };
   console.log(person);
 
@@ -25,7 +29,7 @@ const People = () => {
     console.log(person);
   }, []);
 
-  return (
+  return !loading ? (
     <div className="w-full h-screen px-3 sm:px-14 py-8">
       <div className="w-full flex flex-wrap items-center mt-[-1rem] ">
         <div className="flex gap-x-3 items-center">
@@ -47,8 +51,10 @@ const People = () => {
           <PersonCard key={t.id} t={t} title="person" />
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
+  ) : (
+    <Loading />
   );
 };
 

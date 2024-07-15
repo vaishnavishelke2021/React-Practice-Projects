@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import VCard from "./VCard";
 import Footer from "./Footer";
+import Loading from "./Loading";
 
 const Trending = () => {
   document.title = "FilmBox | Trending";
@@ -12,14 +13,17 @@ const Trending = () => {
   const [category, setCategory] = useState("all");
   const [duration, setDuration] = useState("day");
   const [trending, setTrending] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const getTrendingData = async () => {
+    setLoading(true);
     try {
       const { data } = await axios.get(`/trending/${category}/${duration}`);
       setTrending(data.results);
     } catch (e) {
       console.error(e);
     }
+    setLoading(false);
   };
   console.log(trending);
 
@@ -27,7 +31,7 @@ const Trending = () => {
     getTrendingData();
   }, [category, duration]);
 
-  return (
+  return !loading ? (
     <div className="w-full h-screen px-3 sm:px-14 py-8">
       <div className="flex flex-wrap justify-between items-center mt-[-1rem] ">
         <div className="flex gap-x-3 items-center">
@@ -65,6 +69,8 @@ const Trending = () => {
       </div>
       <Footer />
     </div>
+  ) : (
+    <Loading />
   );
 };
 

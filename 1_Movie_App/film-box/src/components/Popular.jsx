@@ -5,20 +5,24 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import VCard from "./VCard";
 import Footer from "./Footer";
+import Loading from "./Loading";
 
 const Popular = () => {
   document.title = "FilmBox | Popular";
   const navigate = useNavigate();
   const [category, setCategory] = useState("movie");
   const [popular, setPopular] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getPopularData = async () => {
+    setLoading(true);
     try {
       const { data } = await axios.get(`${category}/popular`);
       setPopular(data.results);
     } catch (e) {
       console.error(e);
     }
+    setLoading(false);
   };
   console.log(popular);
 
@@ -26,7 +30,7 @@ const Popular = () => {
     getPopularData();
   }, [category]);
 
-  return (
+  return !loading ? (
     <div className="w-full h-screen px-3 sm:px-14 py-8">
       <div className="flex flex-wrap justify-between items-center mt-[-1rem] ">
         <div className="flex gap-x-3 items-center">
@@ -56,8 +60,10 @@ const Popular = () => {
           <VCard key={t.id} t={t} title={category} />
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
+  ) : (
+    <Loading />
   );
 };
 
