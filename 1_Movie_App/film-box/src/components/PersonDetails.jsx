@@ -25,7 +25,7 @@ const PersonDetails = () => {
   }, [id]);
 
   return info ? (
-    <div className="w-[90%] mx-auto py-8 h-screen">
+    <div className="w-[90%] mx-auto py-8 h-screen px-2 sm:px-0">
       {/* ------------------------------back btn------------------------------- */}
 
       <Link
@@ -36,19 +36,20 @@ const PersonDetails = () => {
       </Link>
 
       {/* --------------------------------header-------------------------------------     */}
-      <div className=" flex justify-between mt-[3.2rem]">
+      <div className=" flex  flex-wrap justify-between mt-[3.2rem] w-full sm:w-[90%] mx-auto">
         {/* -----------------------------left box------------------------------ */}
-        <div className="w-[25%] flex flex-col gap-y-0">
+        <div className=" w-full sm:w-[25%] flex flex-col">
           {/* -----------------------------left box------------------------------ */}
           <img
-            className="w-[86%] h-[60vh] object-cover shadow-lg rounded-[5px] "
+            className="max-w-full min-w-[20%] h-[30vh] sm:h-[55vh] object-cover shadow-lg rounded-[5px] "
             src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path}`}
             alt=""
           />
+          <h1 className="visible sm:hidden text-[1.7rem] font-bold mt-4">{info.detail.name}</h1>
 
           {/* ------------------------------------personal info------------------------------------    */}
-          <div className=" py-10">
-            <h1 className="text-xl font-semibold">Personal Info</h1>
+          <div className="py-5 sm:py-10">
+            <h1 className="text-[1.2rem] sm:text-xl font-semibold">Personal Info</h1>
             <div className="mt-4">
               <h4 className="text-[15px] text-secondary/80 font-medium">
                 Known for
@@ -114,11 +115,11 @@ const PersonDetails = () => {
         </div>
 
         {/* --------------------right box-------------------------- */}
-        <div className="text-start w-[73%] ">
+        <div className="text-start w-full sm:w-[70%] mt-4 sm:mt-0">
           {/* --------------------details and overview--------------------------- */}
           <div>
-            <h1 className="text-3xl font-bold">{info.detail.name}</h1>
-            <p className="text-secondary/90 mt-7 font-semibold">
+            <h1 className="text-[1.7rem] sm:text-3xl font-bold">{info.detail.name}</h1>
+            <p className="text-secondary/90 mt-2 sm:mt-7 font-semibold">
               <h5 className="text-[17px]">Biography</h5>
               <p className="text-secondary/50 text-[16px] mt-1  font-normal">
                 {more

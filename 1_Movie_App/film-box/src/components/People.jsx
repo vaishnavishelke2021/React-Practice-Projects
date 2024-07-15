@@ -41,7 +41,7 @@ const People = () => {
         <SearchBar />
       </div>
 
-      <div className="flex gap-y-5 flex-wrap justify-center sm:justify-between py-10 mt-3">
+      <div className="flex gap-y-5 gap-x-5 sm:gap-x-2 flex-wrap justify-center sm:justify-between py-10 mt-3">
         {person?.map((t) => (
           <PersonCard key={t.id} t={t} title="person" />
         ))}
