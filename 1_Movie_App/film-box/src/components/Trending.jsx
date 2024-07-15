@@ -27,16 +27,16 @@ const Trending = () => {
   }, [category, duration]);
 
   return (
-    <div className="w-full h-screen px-14 p-8 pr-16">
-      <div className="flex justify-between items-center mt-[-1rem] ">
+    <div className="w-full h-screen px-3 sm:px-14 py-8">
+      <div className="flex flex-wrap justify-between items-center mt-[-1rem] ">
         <div className="flex gap-x-3 items-center">
           <p
             onClick={() => navigate(-1)}
-            className=" text-orange cursor-pointer text-2xl"
+            className=" text-orange cursor-pointer text-[1.3rem] sm:text-2xl"
           >
             ◀
           </p>
-          <h1 className="text-[1.4rem] font-semibold w-[13rem]">
+          <h1 className="text-[1.2rem] sm:text-[1.4rem] font-semibold w-[13rem]">
             Trending : {category.toUpperCase()}
           </h1>
         </div>
@@ -57,9 +57,9 @@ const Trending = () => {
         </div>
       </div>
 
-      <div className="flex gap-y-5 flex-wrap justify-between py-10 mt-3">
+      <div className="flex gap-y-5 flex-wrap justify-center sm:justify-between py-10 mt-3">
         {trending?.map((t) => (
-          <VCard key={t.id} t={t} title={category}/>
+          <VCard key={t.id} t={t} title={category} />
         ))}
       </div>
     </div>
