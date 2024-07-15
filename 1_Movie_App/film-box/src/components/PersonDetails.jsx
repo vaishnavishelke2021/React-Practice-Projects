@@ -8,6 +8,11 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
+import { IoMdArrowBack } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
+import HCard from "./HCard";
 
 const PersonDetails = () => {
   const [more, setMore] = useState(false);
@@ -45,7 +50,6 @@ const PersonDetails = () => {
             src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path}`}
             alt=""
           />
-
 
           {/* ------------------------------------personal info------------------------------------    */}
           <div className=" py-10">
@@ -144,7 +148,54 @@ const PersonDetails = () => {
             </p>
           </div>
 
-          {/* ------------------------------------------------------------------------------- */}
+          {/* -------------------------------populaity & social links---------------------------  */}
+          <div className="flex space-x-9 items-center mt-10">
+            <div className="flex items-center space-x-3">
+              <div className="ashadow-lg bg-green-700 text-[18px] text-secondary text-extrabold p-2 flex justify-center items-center rounded-full w-[45px] h-[45px]">
+                {info.detail.popularity.toFixed()}
+              </div>
+
+              <h1 className="font-medium ">Popularity</h1>
+            </div>
+
+            <nav className="flex gap-x-4 items-center">
+              <a
+                href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
+                target="_blank"
+                className="text-[18px] text-secondary/60 shadow-md hover:text-secondary "
+              >
+                <FaGlobeAmericas />
+              </a>
+              <a
+                href={`https://x.com/${info.externalid.twitter_id}/`}
+                target="_blank"
+                className="text-[20px] text-secondary/60 shadow-md hover:text-secondary"
+              >
+                <FaXTwitter />
+              </a>
+              <a
+                href={`https://www.instagram.com/${info.externalid.instagram_id}/`}
+                target="_blank"
+                className="text-[20px] text-secondary/60 shadow-md hover:text-secondary"
+              >
+                <RiInstagramFill />
+              </a>
+            </nav>
+          </div>
+
+          {/* ----------------------------------known for --------------------------------- */}
+          <div className="w-full mt-10 ">
+            <div className="w-full mx-auto">
+              <h1 className="text-xl font-semibold">Known For</h1>
+              <div className="w-full mt-6 flex flex-row gap-4 overflow-x-auto">
+                {info.combinedCredits.cast?.map((t) => (
+                  <HCard key={t.id} t={t} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* -------------------------------------------------------------------------------  */}
         </div>
       </div>
     </div>
