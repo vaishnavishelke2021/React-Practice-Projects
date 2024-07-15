@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import PersonCard from "./PersonCard";
+import Footer from "./Footer";
 
 const People = () => {
   document.title = "FilmBox | People";
@@ -46,6 +47,7 @@ const People = () => {
           <PersonCard key={t.id} t={t} title="person" />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };

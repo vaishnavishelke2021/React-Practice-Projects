@@ -4,6 +4,7 @@ import Dropdown from "./Dropdown";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import VCard from "./VCard";
+import Footer from "./Footer";
 
 const Movies = () => {
   document.title = "FilmBox | Movies";
@@ -55,6 +56,7 @@ const Movies = () => {
           <VCard key={t.id} t={t} title="movie" />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };

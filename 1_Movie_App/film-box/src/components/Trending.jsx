@@ -4,6 +4,7 @@ import Dropdown from "./Dropdown";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import VCard from "./VCard";
+import Footer from "./Footer";
 
 const Trending = () => {
   document.title = "FilmBox | Trending";
@@ -62,6 +63,7 @@ const Trending = () => {
           <VCard key={t.id} t={t} title={category} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 import HorizontalCards from "./HorizontalCards";
 import SearchBar from "./SearchBar";
@@ -8,6 +9,7 @@ const MainPage = () => {
       <SearchBar />
       <Header />
       <HorizontalCards />
+      <Footer />
     </div>
   );
 };

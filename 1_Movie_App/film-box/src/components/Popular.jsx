@@ -4,6 +4,7 @@ import Dropdown from "./Dropdown";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import VCard from "./VCard";
+import Footer from "./Footer";
 
 const Popular = () => {
   document.title = "FilmBox | Popular";
@@ -55,6 +56,7 @@ const Popular = () => {
           <VCard key={t.id} t={t} title={category} />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };

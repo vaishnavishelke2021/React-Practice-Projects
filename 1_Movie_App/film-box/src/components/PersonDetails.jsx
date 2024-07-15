@@ -8,6 +8,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import HCard from "./HCard";
 import Dropdown from "./Dropdown";
+import Footer from "./Footer";
 
 const PersonDetails = () => {
   const [category, setCategory] = useState("movie");
@@ -45,11 +46,15 @@ const PersonDetails = () => {
             src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path}`}
             alt=""
           />
-          <h1 className="visible sm:hidden text-[1.7rem] font-bold mt-4">{info.detail.name}</h1>
+          <h1 className="visible sm:hidden text-[1.7rem] font-bold mt-4">
+            {info.detail.name}
+          </h1>
 
           {/* ------------------------------------personal info------------------------------------    */}
           <div className="py-5 sm:py-10">
-            <h1 className="text-[1.2rem] sm:text-xl font-semibold">Personal Info</h1>
+            <h1 className="text-[1.2rem] sm:text-xl font-semibold">
+              Personal Info
+            </h1>
             <div className="mt-4">
               <h4 className="text-[15px] text-secondary/80 font-medium">
                 Known for
@@ -118,7 +123,9 @@ const PersonDetails = () => {
         <div className="text-start w-full sm:w-[70%] mt-4 sm:mt-0">
           {/* --------------------details and overview--------------------------- */}
           <div>
-            <h1 className="text-[1.7rem] sm:text-3xl font-bold">{info.detail.name}</h1>
+            <h1 className="text-[1.7rem] sm:text-3xl font-bold">
+              {info.detail.name}
+            </h1>
             <p className="text-secondary/90 mt-2 sm:mt-7 font-semibold">
               <h5 className="text-[17px]">Biography</h5>
               <p className="text-secondary/50 text-[16px] mt-1  font-normal">
@@ -215,6 +222,7 @@ const PersonDetails = () => {
           {/* -------------------------------------------------------------------------------  */}
         </div>
       </div>
+      <Footer />
     </div>
   ) : (
     <div className="w-full h-screen flex justify-center items-center">

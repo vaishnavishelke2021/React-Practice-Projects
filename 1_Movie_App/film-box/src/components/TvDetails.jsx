@@ -14,6 +14,7 @@ import { FaLink } from "react-icons/fa6";
 import { LiaImdb } from "react-icons/lia";
 import { IoMdArrowBack } from "react-icons/io";
 import HCard from "../components/HCard";
+import Footer from "./Footer";
 
 const TvDetails = () => {
   const navigate = useNavigate();
@@ -76,7 +77,9 @@ const TvDetails = () => {
                       <h1 className="text-[12px] sm:text-sm text-secondary/80">
                         Now Streaming
                       </h1>
-                      <h1 className="text-[12px] sm:text-sm font-semibold">Watch Now</h1>
+                      <h1 className="text-[12px] sm:text-sm font-semibold">
+                        Watch Now
+                      </h1>
                     </div>
                   </div>
                 )}
@@ -216,6 +219,7 @@ const TvDetails = () => {
         </div>
       </div>
       {/* ---------------------------------------------------------------------------------------- */}
+      <Footer />
       <Outlet />
     </div>
   ) : (
