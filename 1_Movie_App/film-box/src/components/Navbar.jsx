@@ -77,7 +77,11 @@ const Navbar = () => {
             Website Information
           </h1>
           <div className="flex flex-col mt-5 gap-y-1 text-secondary/50">
-            <NavLink icon={<IoIosInformationCircle />} text="About" />
+            <NavLink
+              to="/about"
+              icon={<IoIosInformationCircle />}
+              text="About"
+            />
             <NavLink icon={<BiSolidPhoneCall />} text="Contact" />
           </div>
         </nav>
