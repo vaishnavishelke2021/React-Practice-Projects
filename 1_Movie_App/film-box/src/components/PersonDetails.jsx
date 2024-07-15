@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncloadPerson, removePerson } from "../store/actions/personActions";
-import {
-  Link,
-  // Outlet,
-  // useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGlobeAmericas } from "react-icons/fa";
@@ -19,7 +13,6 @@ const PersonDetails = () => {
   const [category, setCategory] = useState("movie");
   const [more, setMore] = useState(false);
   const navigate = useNavigate();
-  // const { pathname } = useLocation();
   const { id } = useParams();
   const { info } = useSelector((state) => state.person);
   const dispatch = useDispatch();
