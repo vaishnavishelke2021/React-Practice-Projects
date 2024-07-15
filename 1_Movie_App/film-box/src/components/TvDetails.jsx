@@ -191,7 +191,7 @@ const TvDetails = () => {
             {info.detail.seasons.length > 0 ? (
               info.detail.seasons.map((s) => (
                 <div
-                  className="w-[180px] bg-[#1e1e1e] p-2 rounded-[4px] mb-2"
+                  className="min-w-[180px] bg-[#1e1e1e] p-2 rounded-[4px] mb-2"
                   key={s.id}
                 >
                   <img
