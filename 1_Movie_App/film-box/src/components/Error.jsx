@@ -2,7 +2,7 @@ const Error = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center text-xl font-semibold text-red-500">
       <h1 className="text-9xl font-bold text-orange-500">404</h1>
-      <p className="text-xl mt-2">
+      <p className="text-xl text-center mt-2">
         Oops! looks like the page is not available.
       </p>
       <a

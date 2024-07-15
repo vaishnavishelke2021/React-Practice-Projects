@@ -37,10 +37,10 @@ const TvDetails = () => {
           backgroundPosition: "top 1%",
           backgroundSize: "cover",
         }}
-        className="w-full h-[85vh] px-6 py-4 rounded-sm flex items-center"
+        className="w-full min-h-[85vh] px-6 py-4 rounded-sm flex items-center"
       >
         {/* -----------------------------poster and details overvoew------------------------------ */}
-        <div className="w-[90%] mx-auto ">
+        <div className="w-full sm:w-[90%] mx-auto ">
           {/* ------------------------------back btn------------------------------- */}
 
           <Link
@@ -50,11 +50,11 @@ const TvDetails = () => {
             <IoMdArrowBack />
           </Link>
 
-          <div className=" flex justify-between mt-[3.2rem]">
+          <div className=" flex justify-center flex-wrap sm:justify-between mt-[3.2rem]">
             {/* -----------------------------poster------------------------------ */}
-            <div className="w-[22%] flex flex-col gap-y-0">
+            <div className="w-full sm:w-[25%] flex flex-col gap-y-0">
               <img
-                className="w-full h-[55vh] object-cover rounded-[3px] "
+                className="max-w-full min-w-[20%] h-[20vh] sm:h-[55vh] object-cover rounded-[3px] "
                 src={`https://image.tmdb.org/t/p/original/${
                   info.detail.backdrop_path || info.detail.poster_path
                 }`}
@@ -62,21 +62,21 @@ const TvDetails = () => {
               />
               <div>
                 {info.watchproviders && info.watchproviders.flatrate && (
-                  <div className="flex gap-x-3 bg-white/5 shadow-lg p-4 justify-center items-center">
+                  <div className="flex gap-x-3 bg-white/5 shadow-lg p-2 sm:p-3 justify-center items-center">
                     <div className="flex flex-row gap-x-3">
                       {info.watchproviders.flatrate.map((w, i) => (
                         <img
-                          className="w-[5.5vh] h-[5.5vh] rounded-sm object-cover"
+                          className="w-[3vh] sm:w-[5.2vh] h-[3vh] sm:h-[5.2vh] rounded-sm object-cover"
                           key={i}
                           src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                         />
                       ))}
                     </div>
                     <div className="flex flex-col leading-4">
-                      <h1 className="text-sm text-secondary/80">
+                      <h1 className="text-[12px] sm:text-sm text-secondary/80">
                         Now Streaming
                       </h1>
-                      <h1 className="text-sm font-semibold">Watch Now</h1>
+                      <h1 className="text-[12px] sm:text-sm font-semibold">Watch Now</h1>
                     </div>
                   </div>
                 )}
@@ -84,18 +84,18 @@ const TvDetails = () => {
             </div>
 
             {/* --------------------details and overview--------------------------- */}
-            <div className="text-start w-[72%] ">
-              <h1 className="text-4xl font-bold">
+            <div className="text-start w-full sm:w-[70%] ">
+              <h1 className="text-[1.7rem] mt-4 sm:mt-0 leading-10 md:text-[2rem] lg:text-4xl font-bold">
                 {`${info.detail.title || info.detail.name || "No title"} `}
-                <span className="font-normal text-2xl text-white/60">
+                <span className="font-normal text-[1.3rem] md:text-2xl text-white/60">
                   ({new Date(info.detail.first_air_date).getFullYear()})
                 </span>
               </h1>
 
               <div className="mt-1">
                 {/* ------------------------------------release date & genre----------------------------------------- */}
-                <div className="flex gap-x-4 text-[14.4px] mt-1 text-secondary/70">
-                  <h1>{info.detail.first_air_date}</h1> |
+                <div className="flex flex-wrap gap-x-4 text-[14.4px] mt-1 text-secondary/70">
+                  <h1>{info.detail.first_air_date}</h1> •
                   <p className="flex gap-x-2">
                     {info.detail.genres.map((g) => g.name).join(",  ")}
                   </p>
@@ -114,7 +114,7 @@ const TvDetails = () => {
                     </h1>
                   </div>
 
-                  <nav className="flex gap-x-4 mt-8 items-center">
+                  <nav className="flex gap-x-4 mt-8 sm:mt-6  items-center">
                     <a
                       href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
                       target="_blank"
@@ -157,28 +157,6 @@ const TvDetails = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* -------------------------------------watch providers------------------------------------- */}
-          <div className="mt-10 flex gap-x-6">
-            <div>
-              {info.watchproviders && info.watchproviders.rent && (
-                <div className="flex flex-col gap-y-1">
-                  <h1 className="text-sm">Rent/ Buy</h1>
-                  <div className="flex flex-row gap-x-3">
-                    {info.watchproviders.reninfo.detail.map((w, i) => (
-                      <img
-                        className="w-[5vh] h-[5vh] rounded-sm object-cover"
-                        key={i}
-                        src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* ------------------------------------------------------------------------------  */}
           </div>
         </div>
       </div>
