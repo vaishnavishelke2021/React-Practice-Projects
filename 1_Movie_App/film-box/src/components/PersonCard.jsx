@@ -5,7 +5,7 @@ const PersonCard = ({ t, title }) => {
   return (
     <Link
       to={`/person/details/${t.id}`}
-      className="w-[14%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl"
+      className="min-w-[170px] sm:min-w-[190px] max-w-[14%] bg-[#1e1e1e] p-2 rounded-[4px] mb-2 hover:scale-[1.07] transition-all duration-200 ease-in-out cursor-pointer hover:shadow-xl"
     >
       <img
         className="w-full h-[230px] object-cover rounded-[2px]"

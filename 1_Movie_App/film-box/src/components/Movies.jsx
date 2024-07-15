@@ -35,8 +35,8 @@ const Movies = () => {
           >
             ◀
           </p>
-          <h1 className="text-[1.2rem] sm:text-[1.4rem] font-semibold sm:w-[13rem] w-[15rem]">
-            Movies : {category.toUpperCase()}
+          <h1 className="text-[1.2rem] sm:text-[1.4rem] font-semibold w-fit ">
+            Movies : {category.toUpperCase().replaceAll("_", " ")}
           </h1>
         </div>
         <SearchBar />

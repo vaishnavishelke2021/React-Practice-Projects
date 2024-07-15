@@ -25,23 +25,25 @@ const People = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen px-14 p-8 pr-16">
-      <div className="flex justify-between items-center mt-[-1rem] ">
+    <div className="w-full h-screen px-3 sm:px-14 py-8">
+      <div className="w-full flex flex-wrap items-center mt-[-1rem] ">
         <div className="flex gap-x-3 items-center">
           <p
             onClick={() => navigate(-1)}
-            className=" text-orange cursor-pointer text-2xl"
+            className=" text-orange cursor-pointer text-[1.3rem] sm:text-2xl"
           >
             ◀
           </p>
-          <h1 className="text-[1.4rem] font-semibold w-fit">People</h1>
+          <h1 className="text-[1.2rem] sm:text-[1.4rem] font-semibold w-fit">
+            People
+          </h1>
         </div>
         <SearchBar />
       </div>
 
-      <div className="flex gap-5 gap-x-8 mx-auto flex-wrap justify-center py-10 mt-3">
+      <div className="flex gap-y-5 flex-wrap justify-center sm:justify-between py-10 mt-3">
         {person?.map((t) => (
-          <PersonCard key={t.id} t={t} title="person"/>
+          <PersonCard key={t.id} t={t} title="person" />
         ))}
       </div>
     </div>
