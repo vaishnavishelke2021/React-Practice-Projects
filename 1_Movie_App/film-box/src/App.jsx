@@ -11,6 +11,7 @@ import PersonDetails from "./components/PersonDetails";
 import Trailer from "./components/Trailer";
 import Error from "./components/Error";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

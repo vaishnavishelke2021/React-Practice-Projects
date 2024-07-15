@@ -82,7 +82,7 @@ const Navbar = () => {
               icon={<IoIosInformationCircle />}
               text="About"
             />
-            <NavLink icon={<BiSolidPhoneCall />} text="Contact" />
+            <NavLink to="/contact" icon={<BiSolidPhoneCall />} text="Contact" />
           </div>
         </nav>
       </div>
