@@ -57,6 +57,5 @@ Currently, two official plugins are available:
 - react-router dom
 - axios
 - react-player
-- react-infinite-scroll-component
 - react-icons
 - @reduxjs/toolkit react-redux
