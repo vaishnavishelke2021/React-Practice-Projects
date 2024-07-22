@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#c797d8",
+        secondary: "#161616",
+      },
+      fontFamily: {
+        Mulish: ["Mulish", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
