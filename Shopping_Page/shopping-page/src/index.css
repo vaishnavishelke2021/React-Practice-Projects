@@ -15,3 +15,16 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::selection {
+  background-color: #86469C;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #86469C;
+  border-radius: 20px;
+}
