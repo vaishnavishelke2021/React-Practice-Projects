@@ -1,12 +1,15 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
 import HomePage from "./Components/HomePage";
+import { Route, Routes } from "react-router-dom";
+import Details from "./Components/Details";
 
 const App = () => {
   return (
     <div className="w-screen h-screen flex bg-slate-100 font-Mulish">
-      <Navbar />
-      <HomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/details/:id" element={<Details />} />
+      </Routes>
     </div>
   );
 };
