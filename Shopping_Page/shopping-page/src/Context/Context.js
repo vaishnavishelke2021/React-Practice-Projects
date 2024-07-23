@@ -14,7 +14,7 @@ const Context = ({ children }) => {
       const response = await fetch(BASE_URL);
       const data = await response.json();
       setProduct(data);
-      console.log(data);
+    //   console.log(data);
     } catch (e) {
       console.log(e);
     }

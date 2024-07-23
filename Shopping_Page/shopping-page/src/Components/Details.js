@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-// import { ProductContext } from "../Context/Context";
+
 
 const Details = () => {
   const [pdata, setPdata] = useState(null);
@@ -41,7 +41,8 @@ const Details = () => {
           </p>
 
           <p className="text-[1rem] font-semibold mt-3 text-secondary/40">
-            Category: {pdata?.category} <span className="text-secondary/70">⭐ {pdata?.rating?.rate}</span>
+            Category: {pdata?.category}{" "}
+            <span className="text-secondary/70">⭐ {pdata?.rating?.rate}</span>
           </p>
 
           <div className="mt-9 flex justify-between items-center">
