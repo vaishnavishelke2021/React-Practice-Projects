@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Details = () => {
   const [pdata, setPdata] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const getSingleProduct = async () => {
     try {
@@ -22,8 +22,22 @@ const Details = () => {
   });
 
   return pdata ? (
-    <div className="w-full h-screen flex justify-center items-center bg-primary/20">
-      <div className="w-[60%] mx-auto flex justify-between p-16 bg-white rounded-lg">
+    <div className="w-full h-screen flex flex-col justify-center items-center bg-primary/20">
+      <div className="w-[60%] mx-auto flex items-center gap-x-2">
+        <Link
+          onClick={() => navigate(-1)}
+          className="text-[14px] py-1 px-4 rounded-md bg-primary text-white hover:bg-white hover:border-white hover:text-secondary border-primary border-2  font-bold transition-all duration-200"
+        >
+          Back
+        </Link>
+        <Link
+          to="/"
+          className="text-[14px] py-1 px-4 rounded-md hover:bg-white hover:border-white hover:text-secondary border-primary border-2 text-primary font-bold transition-all duration-200"
+        >
+          Home
+        </Link>
+      </div>
+      <div className="w-[60%] mt-3 mx-auto flex justify-between p-16 bg-white rounded-lg">
         <div className="w-[35%] h-[300px] shadow-sm border-[2px] bg-white p-6 rounded-md flex justify-center items-center">
           <img
             className="w-full h-full object-contain"
