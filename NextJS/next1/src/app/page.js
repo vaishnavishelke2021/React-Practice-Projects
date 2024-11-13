@@ -1,4 +1,6 @@
 "use client";
+import { useRouter } from "next/navigation";
+
 import React from "react";
 
 const page = () => {
@@ -12,6 +14,12 @@ const page = () => {
 export default page;
 
 const Next1 = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/about");
+  };
+
   return (
     <div className="flex flex-col justify-center item-center">
       <h1 className="text-center text-3xl font-bold my-10">
@@ -22,6 +30,12 @@ const Next1 = () => {
         onClick={() => alert("i am using use client")}
       >
         use client btn
+      </button>
+      <button
+        onClick={() => handleClick()}
+        className="text-center text-blue-500 underline mt-3"
+      >
+        Go to about
       </button>
     </div>
   );
