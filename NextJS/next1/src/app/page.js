@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import React from "react";
@@ -37,6 +38,7 @@ const Next1 = () => {
       >
         Go to about
       </button>
+      <Link href="/login" className="bg-green-600 px-5 py-2 text-white w-fit mx-auto mt-2">Login</Link>
     </div>
   );
 };
