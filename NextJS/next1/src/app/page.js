@@ -38,7 +38,18 @@ const Next1 = () => {
       >
         Go to about
       </button>
-      <Link href="/login" className="bg-green-600 px-5 py-2 text-white w-fit mx-auto mt-2">Login</Link>
+      <Link
+        href="/login"
+        className="bg-green-600 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Login
+      </Link>
+      <Link
+        href="/studentlist"
+        className="bg-pink-800 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Student List Page
+      </Link>
     </div>
   );
 };
