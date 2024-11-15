@@ -50,6 +50,12 @@ const Next1 = () => {
       >
         Student List Page
       </Link>
+      <Link
+        href="/study"
+        className="bg-blue-800 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Study
+      </Link>
     </div>
   );
 };
