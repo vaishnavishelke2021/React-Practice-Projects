@@ -56,6 +56,13 @@ const Next1 = () => {
       >
         Study
       </Link>
+
+      <Link
+        href="/productlist"
+        className="bg-fuchsia-600 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Products Page
+      </Link>
     </div>
   );
 };
