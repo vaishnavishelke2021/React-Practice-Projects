@@ -71,6 +71,13 @@ const Next1 = () => {
       >
         Image Optimization
       </Link>
+
+      <Link
+        href="/imageoptimize"
+        className="bg-emerald-500 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        FOnt Optimization
+      </Link>
     </div>
   );
 };
