@@ -6,7 +6,7 @@ async function productList() {
 
 export default async function Page() {
   let products = await productList();
-//   console.log(products);
+  //   console.log(products);
 
   return (
     <div className="p-10">

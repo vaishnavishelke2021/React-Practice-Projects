@@ -63,6 +63,14 @@ const Next1 = () => {
       >
         Products Page
       </Link>
+
+      <hr className="my-6" />
+      <Link
+        href="/imageoptimize"
+        className="bg-lime-600 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Image Optimization
+      </Link>
     </div>
   );
 };
