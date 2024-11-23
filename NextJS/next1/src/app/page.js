@@ -73,10 +73,10 @@ const Next1 = () => {
       </Link>
 
       <Link
-        href="/imageoptimize"
+        href="/fontoptimize"
         className="bg-emerald-500 px-5 py-2 text-white w-fit mx-auto mt-2"
       >
-        FOnt Optimization
+        Font Optimization
       </Link>
     </div>
   );
