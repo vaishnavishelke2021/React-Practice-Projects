@@ -78,6 +78,13 @@ const Next1 = () => {
       >
         Font Optimization
       </Link>
+
+      <Link
+        href="/metadata"
+        className="bg-cyan-700 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Dynamic Meta Data
+      </Link>
     </div>
   );
 };
