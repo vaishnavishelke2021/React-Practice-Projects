@@ -1,3 +1,5 @@
+import Hero from "@/components/hero";
+
 async function productList() {
   let response = await fetch("https://dummyjson.com/products");
   let data = await response.json();
@@ -10,6 +12,7 @@ export default async function Page() {
 
   return (
     <div className="p-10">
+      <Hero />
       <h1 className="py-6 text-center text-3xl font-extrabold text-blue-800">
         Product List
       </h1>
