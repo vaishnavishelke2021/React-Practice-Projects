@@ -85,6 +85,13 @@ const Next1 = () => {
       >
         Dynamic Meta Data
       </Link>
+
+      <Link
+        href="/scripttag"
+        className="bg-amber-500 px-5 py-2 text-white w-fit mx-auto mt-2"
+      >
+        Script Tag Use
+      </Link>
     </div>
   );
 };
