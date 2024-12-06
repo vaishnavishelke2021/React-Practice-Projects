@@ -17,6 +17,13 @@ const Home = () => {
         >
           Sign Up
         </Link>
+
+        <Link
+          href="/profile"
+          className="text-center rounded-sm border-2 border-red-500 bg-red-500 px-4 py-2 text-white hover:bg-red-600 font-semibold"
+        >
+          Profile
+        </Link>
       </div>
     </div>
   );
