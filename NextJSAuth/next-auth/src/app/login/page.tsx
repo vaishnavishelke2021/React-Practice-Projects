@@ -1,22 +1,45 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
     password: "",
   });
 
-  const onLogin = async () => {};
+  const [buttonDisabled, setButtonDisabled] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+
+  const onLogin = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.post("/api/user/login", user);
+      console.log("Login Successful", response.data);
+      router.push("/profile");
+    } catch (error) {
+      console.log("Login Failed:", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (user.email.length > 0 && user.password.length > 0) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [user]);
 
   return (
     <div className="">
       <h2 className="text-2xl font-extrabold text-center text-black my-10">
-        Login Page
+        {loading ? "loading..." : "Login Page"}
       </h2>
 
       <div className="flex space-y-5 flex-col justify-center items-center border-2 p-7 w-fit rounded-md mx-auto">
@@ -56,7 +79,9 @@ export default function LoginPage() {
 
         <button
           onClick={onLogin}
-          className="bg-blue-600 text-white p-2 text-center w-full"
+          className={` text-white p-2 text-center w-full ${
+            buttonDisabled ? "bg-blue-400" : "bg-blue-600"
+          }`}
         >
           Login
         </button>
