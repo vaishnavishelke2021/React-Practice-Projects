@@ -14,8 +14,26 @@ export default function SignUpPage() {
   });
 
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
-  const onSignUp = async () => {};
+  const onSignUp = async () => {
+    if (!user.email || !user.password || !user.username) {
+      alert("All fields are required.");
+      return;
+    }
+    try {
+      setLoading(true);
+      const response = await axios.post("/api/user/signup", user, {
+        headers: { "Content-Type": "application/json" },
+      });
+      // console.log("SignUp successful with data ", response.data);
+      router.push("/login");
+    } catch (error) {
+      console.log("Error signing up user:", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     if (
@@ -32,7 +50,7 @@ export default function SignUpPage() {
   return (
     <div className="">
       <h2 className="text-2xl font-extrabold text-center text-black my-10">
-        SignUp Page
+        {loading ? "loading..." : "SignUp Page"}
       </h2>
 
       <div className="flex space-y-5 flex-col justify-center items-center border-2 p-7 w-fit rounded-md mx-auto">

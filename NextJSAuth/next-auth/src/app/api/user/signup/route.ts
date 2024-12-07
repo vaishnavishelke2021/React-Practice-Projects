@@ -5,7 +5,7 @@ import bcryptjs from "bcryptjs";
 
 connect();
 
-export default async function POST(req: NextRequest) {
+export const POST = async (req: NextRequest) => {
   try {
     const reqBody = await req.json();
     const { username, email, password } = reqBody;
@@ -21,6 +21,8 @@ export default async function POST(req: NextRequest) {
     // hash password
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(password, salt);
+    // const hashedPassword = await bcryptjs.hash(password, 10);
+    console.log("Hashed Password:", hashedPassword);
 
     const newUser = new User({
       username,
@@ -42,4 +44,4 @@ export default async function POST(req: NextRequest) {
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
-}
+};
