@@ -19,11 +19,13 @@ const ProfilePage = () => {
 
   const getUserDetails = async () => {
     try {
-      const res = await axios.get("/api/user/me", { withCredentials: true });
-      console.log("API Response:", res.data);
-      setData(res.data.data.username || "");
+      const res = await axios.get("/api/user/me");
+      setData(res.data.data.username);
     } catch (error) {
-      console.log("Error fetching user details:", error.message);
+      if (error.response?.status === 401) {
+        alert("Session expired. Please log in again.");
+        router.push("/login");
+      }
     }
   };
 
